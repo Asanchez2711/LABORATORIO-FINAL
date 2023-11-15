@@ -2,12 +2,23 @@
 
 void manager_vendedor::CargarVendedor(){
 
+int v,r;
+archivo_empleado arch("empleado.dat");
     cout<<" ESTA POR INGRESAR UN VENDEDOR "<<endl;
     cout<<endl;
-    Empleado obj;
-    obj.cargar();
-    arch.GuardarEmpleado(obj);
+    cout<<"Ingrese el id del vendedor"<<endl;
+    cin>>v;
+    cout<<endl;
+   r=arch.BuscarEmpleadoenArchivo(v);
 
+   if(r==-1){
+
+    Empleado obj;
+    obj.cargar(v);//lo paso por parametro para no cargar 2 veces el id, lo mismo hice en el metodo para cargar el cliente.
+    obj.setLegajo(v);
+
+    arch.GuardarEmpleado(obj);}
+    else cout<<"REGISTRO REPETIDO"<<endl;
 }
 
 void manager_vendedor::TotalRecaudado(){
@@ -60,7 +71,7 @@ void manager_vendedor::ModificarVendedor(){
                 empleado=arch.leerEmpleado(i,empleado);
 
                 if(legajo==empleado.getLegajo()){
-                    empleado.cargar();
+                    empleado.cargar(legajo);
                     arch.ModificarEmpleado(empleado,i);
                     break;
                 }
@@ -86,10 +97,11 @@ void manager_vendedor::EliminarVendedor(){
 
         cout<<"VENDEDOR A ELIMINAR: "<<endl;
         MostrarVendedor(reg);
-        cout<<"¿ESTA SEGURO QUE DESEA ELIMINAR EL VENDEDOR? S/N: ";
+        cout<<"Â¿ESTA SEGURO QUE DESEA ELIMINAR EL VENDEDOR? S/N: ";
         char r;
         cin>>r;
         if(toupper(r) == 'S'){
+                reg.setEstado(false);
             reg.SetEliminado(true);
             arch.BorrarEmpleado(reg, posicion);
             cout<<endl;
@@ -103,7 +115,7 @@ void manager_vendedor::EliminarVendedor(){
 
     }
     else{
-        cout<<"¡¡ REGISTRO: "<<legajo<<" NO EXISTE, NO ES POSIBLE ELIMINAR !!"<<endl;
+        cout<<"Â¡Â¡ REGISTRO: "<<legajo<<" NO EXISTE, NO ES POSIBLE ELIMINAR !!"<<endl;
     }
 }
 
@@ -126,7 +138,7 @@ void manager_vendedor::BuscarVendedor(){
         reg.mostrar();
     }
     else{
-    cout<<"¡¡ LEGAJO NO SE ENCUENTRA EN LOS ARCHIVOS !! "<<endl;
+    cout<<"Â¡Â¡ LEGAJO NO SE ENCUENTRA EN LOS ARCHIVOS !! "<<endl;
     }
 }
 
@@ -187,7 +199,7 @@ void manager_vendedor::BuscarVendedor(){
          totalventa+=(prod.getPrecio()*cantidad);
          prod.setCantidad(prod.getCantidad()-cantidad);
          archpro.ModificarProducto(prod,pos);
-         cout<<"¿Desea ingresar otro producto? si/no"<<endl;
+         cout<<"Â¿Desea ingresar otro producto? si/no"<<endl;
          cin.ignore();
           cin>>resp;
          while (resp!="si"&&resp!="no")
@@ -195,7 +207,7 @@ void manager_vendedor::BuscarVendedor(){
 
 
              cout<<"Ha ingresado un parametro invalido. Por favor, ingrese si o no"<<endl;
-             cout<<"¿Desea ingresar otro producto? si/no"<<endl;
+             cout<<"Â¿Desea ingresar otro producto? si/no"<<endl;
 
          if (resp=="no")
          {
