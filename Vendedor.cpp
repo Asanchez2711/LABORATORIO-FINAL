@@ -24,10 +24,13 @@ system("cls");
 switch(opcion){
 
 case 1:{
-
+int legajo;
         cout<<"ESTA POR GUARDAR UN CLIENTE"<<endl;
         Cliente cliente;
-        cliente.cargar();
+        cout<<endl;
+        cout<<"Ingrese el numero de legajo del cliente: "<<endl;
+        cin>>legajo;
+        cliente.cargar(legajo);
         archivo_cliente arch("cliente.dat");
         arch.GuardarCliente(cliente);
         system("pause");
@@ -46,7 +49,7 @@ case 2:{
         while(cin.fail()){
             if (std::cin.fail()) {
             std::cin.clear();  // Limpiar el estado de error
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // Descartar la entrada no v√°lida
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // Descartar la entrada no v·lida
             std::cout << "Entrada no valida. Por favor, ingrese un numero entero.\n";
             cin>>legajo;
 
@@ -86,7 +89,6 @@ case 2:{
         break;
 }
 
-
 case 3:{
     archivo_cliente arch("cliente.dat");
     arch.ListarClientes();
@@ -104,7 +106,7 @@ case 4:{
     while(cin.fail()){
             if (std::cin.fail()) {
             std::cin.clear();  // Limpiar el estado de error
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // Descartar la entrada no v√°lida
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // Descartar la entrada no v·lida
             std::cout << "Entrada no valida. Por favor, ingrese un numero entero.\n";
             cin>>legajo;
 

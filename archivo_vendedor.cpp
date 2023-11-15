@@ -140,4 +140,3 @@ Empleado archivo_empleado::Leer(int nroRegistro){
 
 }
 
-

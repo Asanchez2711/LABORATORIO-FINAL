@@ -175,12 +175,13 @@ void Fecha::cargar()
     while (cin.fail())
         {
 
-            /*
+
+
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(),'\n');
             cout<<"Valor invalido, ingrese solo numeros"<<endl;
             cout<<"Ingrese nuevamente el valor"<<endl;
-            */
+
 
             //validarNumeros();
             cin>>dia;
@@ -188,13 +189,15 @@ void Fecha::cargar()
         }
     cout<<"Ingrese mes: "<<endl;
     cin>>mes;
+
+
     while (cin.fail())
         {
-            /*
+
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(),'\n');
             cout<<"Valor invalido, ingrese solo numeros"<<endl;
-            cout<<"Ingrese nuevamente el valor"<<endl;*/
+            cout<<"Ingrese nuevamente el valor"<<endl;
 
             //validarNumeros();
             cin>>mes;
@@ -204,42 +207,18 @@ void Fecha::cargar()
     cin>>anio;
     while (cin.fail())
         {
-            /*
+
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(),'\n');
             cout<<"Valor invalido, ingrese solo numeros"<<endl;
-            cout<<"Ingrese nuevamente el valor"<<endl;*/
+            cout<<"Ingrese nuevamente el valor"<<endl;
 
             //validarNumeros();
             cin>>anio;
 
         }
 
-    if(dia<1 || dia>31){
-        _dia=1;
-        _mes=1;
-        _anio=0;
-    } else if(dia>28 && mes==2 && anio%4!=0) {
-        _dia=1;
-        _mes=1;
-        _anio=0;
-    } else if(dia>29 && mes==2){
-        _dia=1;
-        _mes=1;
-        _anio=0;
-    } else if((dia>30 && mes==4)||(dia>30 && mes==6)||(dia>30 && mes==9)||(dia>30 && mes==11)){
-        _dia=1;
-        _mes=1;
-        _anio=0;
-    } else if(mes<0 || mes>12){
-        _dia=1;
-        _mes=1;
-        _anio=0;
-    } else {
-        _dia=dia;
-        _mes=mes;
-        _anio=anio;
-    }
+
 
 }
 
