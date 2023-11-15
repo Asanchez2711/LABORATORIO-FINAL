@@ -97,7 +97,7 @@ void manager_vendedor::EliminarVendedor(){
 
         cout<<"VENDEDOR A ELIMINAR: "<<endl;
         MostrarVendedor(reg);
-        cout<<"Â¿ESTA SEGURO QUE DESEA ELIMINAR EL VENDEDOR? S/N: ";
+        cout<<"¿ESTA SEGURO QUE DESEA ELIMINAR EL VENDEDOR? S/N: ";
         char r;
         cin>>r;
         if(toupper(r) == 'S'){
@@ -115,7 +115,7 @@ void manager_vendedor::EliminarVendedor(){
 
     }
     else{
-        cout<<"Â¡Â¡ REGISTRO: "<<legajo<<" NO EXISTE, NO ES POSIBLE ELIMINAR !!"<<endl;
+        cout<<"¡¡ REGISTRO: "<<legajo<<" NO EXISTE, NO ES POSIBLE ELIMINAR !!"<<endl;
     }
 }
 
@@ -138,7 +138,7 @@ void manager_vendedor::BuscarVendedor(){
         reg.mostrar();
     }
     else{
-    cout<<"Â¡Â¡ LEGAJO NO SE ENCUENTRA EN LOS ARCHIVOS !! "<<endl;
+    cout<<"¡¡ LEGAJO NO SE ENCUENTRA EN LOS ARCHIVOS !! "<<endl;
     }
 }
 
@@ -199,7 +199,7 @@ void manager_vendedor::BuscarVendedor(){
          totalventa+=(prod.getPrecio()*cantidad);
          prod.setCantidad(prod.getCantidad()-cantidad);
          archpro.ModificarProducto(prod,pos);
-         cout<<"Â¿Desea ingresar otro producto? si/no"<<endl;
+         cout<<"¿Desea ingresar otro producto? si/no"<<endl;
          cin.ignore();
           cin>>resp;
          while (resp!="si"&&resp!="no")
@@ -207,7 +207,7 @@ void manager_vendedor::BuscarVendedor(){
 
 
              cout<<"Ha ingresado un parametro invalido. Por favor, ingrese si o no"<<endl;
-             cout<<"Â¿Desea ingresar otro producto? si/no"<<endl;
+             cout<<"¿Desea ingresar otro producto? si/no"<<endl;
 
          if (resp=="no")
          {
