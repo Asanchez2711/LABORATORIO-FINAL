@@ -38,12 +38,42 @@ case 1:{
 case 2:{
     cout<<"ESTA POR BORRAR UN CLIENTE"<<endl;
         Cliente cliente;
-        int legajo,i;
+        int legajo,i,posicion;
         archivo_cliente arch("cliente.dat");
         int cantidad=arch.archivoClienteContar();
         cout<<"Ingrese Legajo de cliente"<<endl;
         cin>>legajo;
+        while(cin.fail()){
+            if (std::cin.fail()) {
+            std::cin.clear();  // Limpiar el estado de error
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // Descartar la entrada no válida
+            std::cout << "Entrada no valida. Por favor, ingrese un numero entero.\n";
+            cin>>legajo;
 
+
+        }
+        }
+    posicion=arch.BuscarLegajoCliente(legajo,cliente);
+    cliente=arch.leerCliente(posicion,cliente);
+
+    if(cliente.getLegajo()==legajo){
+        cliente.mostrar();
+    } else {
+        cout<<"No hay ningun cliente con el legajo "<<legajo<<endl;
+    }
+       /*
+       for(i=0;i<cantidad;i++){
+            cliente=arch.leerCliente(i,cliente);
+        if (cliente.getLegajo()==legajo){
+            cout<<"Legajo ya existente";
+            break;
+        } else if (cliente.getLegajo()!=legajo && cantidad==i-1 ){
+            cout<<"Legajo no existente";
+            break;
+        }
+
+       }
+    */
         for(i=0;i<cantidad;i++){
                 cliente=arch.leerCliente(i,cliente);
                 cliente.setEstado(false);
@@ -55,6 +85,7 @@ case 2:{
         system("cls");
         break;
 }
+
 
 case 3:{
     archivo_cliente arch("cliente.dat");
@@ -70,6 +101,14 @@ case 4:{
     Cliente cliente;
     cout<<"Ingrese el legajo del cliente a buscar"<<endl;
     cin>>legajo;
+    while(cin.fail()){
+            if (std::cin.fail()) {
+            std::cin.clear();  // Limpiar el estado de error
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // Descartar la entrada no válida
+            std::cout << "Entrada no valida. Por favor, ingrese un numero entero.\n";
+            cin>>legajo;
+
+        }
     posicion=arch.BuscarLegajoCliente(legajo,cliente);
     cliente=arch.leerCliente(posicion,cliente);
     if(cliente.getLegajo()==legajo){
@@ -80,6 +119,7 @@ case 4:{
     system("pause");
     system("cls");
     break;
+}
 }
 
 case 5:
