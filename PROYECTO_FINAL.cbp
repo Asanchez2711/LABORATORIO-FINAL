@@ -40,6 +40,8 @@
 		<Unit filename="Persona.h" />
 		<Unit filename="Vendedor.cpp" />
 		<Unit filename="Vendedor.h" />
+		<Unit filename="Venta.cpp" />
+		<Unit filename="Venta.h" />
 		<Unit filename="administrador.cpp" />
 		<Unit filename="administrador.h" />
 		<Unit filename="aplicacion.cpp" />
@@ -50,6 +52,8 @@
 		<Unit filename="archivo_producto.h" />
 		<Unit filename="archivo_vendedor.cpp" />
 		<Unit filename="archivo_vendedor.h" />
+		<Unit filename="archivo_venta.cpp" />
+		<Unit filename="archivo_venta.h" />
 		<Unit filename="empleado.cpp" />
 		<Unit filename="empleado.h" />
 		<Unit filename="main.cpp" />

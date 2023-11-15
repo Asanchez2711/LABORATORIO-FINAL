@@ -114,7 +114,7 @@ void manager_vendedor::MostrarVendedor(Empleado reg){
 
 }
 
-<<<<<<< HEAD
+
 void manager_vendedor::BuscarVendedor(){
     int legajo;
     cout<<"INGRESE LEGAJO A BUSCAR :";
@@ -129,12 +129,12 @@ void manager_vendedor::BuscarVendedor(){
     cout<<"¡¡ LEGAJO NO SE ENCUENTRA EN LOS ARCHIVOS !! "<<endl;
     }
 }
-=======
+
  void manager_vendedor::CargarVenta()
  {
 
-       Venta venta;
-       archivo_venta archventa;
+    Venta venta;
+    archivo_venta archventa;
     Producto prod;
     archivo_producto archpro("producto.dat");
     int cantprod = archpro.archivoProductoContar();
@@ -218,4 +218,4 @@ void manager_vendedor::BuscarVendedor(){
 
 
  }
->>>>>>> 8730acab00300f594c07685f5c147b30efd21390
+
