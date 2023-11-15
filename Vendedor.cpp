@@ -82,6 +82,25 @@ case 4:{
     break;
 }
 
+case 5:
+    {
+
+        manager_vendedor management;
+
+        management.CargarVenta();
+
+
+        break;
+    }
+
+case 6:
+    {
+        archivo_venta archven;
+        archven.ListarVentas();
+
+        break;
+    }
+
 
 default:
     return;
