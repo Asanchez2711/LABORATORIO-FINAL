@@ -73,8 +73,6 @@ void manager_vendedor::ModificarVendedor(){
 
 void manager_vendedor::ListarVendedores(){
     arch.ListarEmpleados();
-    system("pause");
-    system("cls");
 }
 
 void manager_vendedor::EliminarVendedor(){
@@ -85,6 +83,7 @@ void manager_vendedor::EliminarVendedor(){
     posicion=arch.BuscarEmpleadoenArchivo(legajo);
     if(posicion>=0){
         Empleado reg = arch.Leer(posicion);
+
         cout<<"VENDEDOR A ELIMINAR: "<<endl;
         MostrarVendedor(reg);
         cout<<"¿ESTA SEGURO QUE DESEA ELIMINAR EL VENDEDOR? S/N: ";
@@ -96,6 +95,7 @@ void manager_vendedor::EliminarVendedor(){
             cout<<endl;
             cout<<"VENDEDOR ELIMINADO CORRECTAMENTE"<<endl;
         }
+
         else{
             cout<<endl;
             cout<<"OPERACION CANCELADA"<<endl;
@@ -103,7 +103,7 @@ void manager_vendedor::EliminarVendedor(){
 
     }
     else{
-        cout<<"!!REGISTRO: "<<legajo<<" NO ES POSIBLE ELIMINAR!!"<<endl;
+        cout<<"¡¡ REGISTRO: "<<legajo<<" NO EXISTE, NO ES POSIBLE ELIMINAR !!"<<endl;
     }
 }
 
@@ -112,4 +112,19 @@ void manager_vendedor::MostrarVendedor(Empleado reg){
     cout<<"NOMBRE: "<<reg.getNombre()<<endl;
     cout<<"APELLIDO: "<<reg.getApellido()<<endl;
 
+}
+
+void manager_vendedor::BuscarVendedor(){
+    int legajo;
+    cout<<"INGRESE LEGAJO A BUSCAR :";
+    cin>>legajo;
+    int pos;
+    pos = arch.BuscarEmpleadoenArchivo(legajo);
+    if(pos>=0){
+        Empleado reg = arch.Leer(pos);
+        reg.mostrar();
+    }
+    else{
+    cout<<"¡¡ LEGAJO NO SE ENCUENTRA EN LOS ARCHIVOS !! "<<endl;
+    }
 }

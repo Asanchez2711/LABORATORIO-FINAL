@@ -144,3 +144,148 @@
 1699827153 source:c:\users\alejandro\desktop\proyecto_final\proyecto_final\vendedor.cpp
 	"Vendedor.h"
 
+1700059346 source:c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\administrador.cpp
+	<iostream>
+	"administrador.h"
+
+1699823551 c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\administrador.h
+	<iostream>
+	<cstdio>
+	<cstring>
+	"manager.h"
+	"manager_vendedor.h"
+
+1699883312 c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\manager.h
+	<iostream>
+	<cstdio>
+	<limits>
+	<cstring>
+	"archivo_producto.h"
+	"producto.h"
+
+1699722708 c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\archivo_producto.h
+	<iostream>
+	<cstdio>
+	<cstring>
+	"Producto.h"
+
+1700054365 c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\producto.h
+	<iostream>
+	<cstdio>
+	<cstring>
+	"Fecha.h"
+
+1699722549 c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\fecha.h
+	<iostream>
+	<string.h>
+
+1700057529 c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\manager_vendedor.h
+	<iostream>
+	<cstdio>
+	"archivo_vendedor.h"
+	"empleado.h"
+	"Persona.h"
+	"Fecha.h"
+
+1699905269 c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\archivo_vendedor.h
+	<iostream>
+	<string>
+	<cstdio>
+	"Persona.h"
+	"empleado.h"
+
+1699822494 c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\persona.h
+	<iostream>
+	<string>
+	<limits>
+	"Fecha.h"
+
+1699889691 c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\empleado.h
+	<iostream>
+	<string>
+	<cstdio>
+	"Fecha.h"
+	"Persona.h"
+
+1699826204 source:c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\aplicacion.cpp
+	<iostream>
+	<limits>
+	"aplicacion.h"
+
+1699826204 c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\aplicacion.h
+	<iostream>
+	<cstdio>
+	"administrador.h"
+	"Vendedor.h"
+	"manager.h"
+
+1699826493 c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\vendedor.h
+	<iostream>
+	<cstdio>
+	"Cliente.h"
+	"archivo_cliente.h"
+
+1699826493 c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\cliente.h
+	<iostream>
+	<string>
+	"Fecha.h"
+	"Persona.h"
+
+1699826513 c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\archivo_cliente.h
+	<iostream>
+	<string>
+	"Cliente.h"
+
+1699826493 source:c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\archivo_cliente.cpp
+	"archivo_cliente.h"
+	<iostream>
+	<string>
+
+1700059822 source:c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\archivo_producto.cpp
+	<iostream>
+	<string>
+	<vector>
+	"archivo_producto.h"
+
+1700056553 source:c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\archivo_vendedor.cpp
+	"archivo_vendedor.h"
+	"empleado.h"
+
+1699826493 source:c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\cliente.cpp
+	"Cliente.h"
+	<iostream>
+	<string>
+	"Fecha.h"
+
+1699889691 source:c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\empleado.cpp
+	"Empleado.h"
+	"Fecha.h"
+
+1699722873 source:c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\fecha.cpp
+	<limits>
+	"Fecha.h"
+
+1699721510 source:c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\main.cpp
+	<iostream>
+	<cstdio>
+	"aplicacion.h"
+
+1700062616 source:c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\manager.cpp
+	<iostream>
+	"Fecha.h"
+	"manager.h"
+
+1700057983 source:c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\manager_vendedor.cpp
+	"manager_vendedor.h"
+
+1699822460 source:c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\persona.cpp
+	"Persona.h"
+
+1700054834 source:c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\producto.cpp
+	"Producto.h"
+	<string>
+	<limits>
+
+1700053949 source:c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\vendedor.cpp
+	"Vendedor.h"
+

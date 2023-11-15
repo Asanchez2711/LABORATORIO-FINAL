@@ -8,7 +8,7 @@ using namespace std;
 
  int archivo_producto:: archivoProductoContar(){
 
-    FILE *p=fopen("producto.dat", "rb");
+    FILE *p=fopen(_nombre.c_str(), "rb");
     if(p==nullptr){
         return 0;
     }
@@ -85,7 +85,7 @@ Producto reg;
         return false;
     }
     while(fread(&reg,sizeof reg,1,pAlu)==1){
-            if(reg.getEstado()!=false){
+            if(reg.getEstado()!=true){
         reg.mostrar();
         cout<<endl;}
     }
@@ -150,7 +150,7 @@ void archivo_producto::borrarProductoVoid(int posicion){
 
 Producto archivo_producto::LeerProductoBuscado(int nro){
     Producto reg;
-    FILE *p=fopen("producto.dat", "rb");
+    FILE *p=fopen(_nombre.c_str(), "rb");
     if(p==nullptr){
         return reg;
     }

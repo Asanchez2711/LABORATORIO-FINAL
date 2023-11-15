@@ -100,9 +100,16 @@ case 9:
 
 case 10:
     _managerVendedor.ListarVendedores();
+    system("pause");
+    system("cls");
     break;
 
+case 11:
+    _managerVendedor.BuscarVendedor();
+    system("pause");
+    system("cls");
     break;
+
 case 12:
     _manager.BuscarXID();
     system("pause");

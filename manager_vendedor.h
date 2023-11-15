@@ -14,6 +14,7 @@ public:
     void CargarVendedor();
     void TotalRecaudado();
     void TotalRecaudadoXVendedor();
+    void BuscarVendedor();
     void ModificarVendedor();
     void ListarVendedores();
     void EliminarVendedor();

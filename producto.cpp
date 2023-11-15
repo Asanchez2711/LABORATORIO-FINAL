@@ -7,7 +7,7 @@ using namespace std;
 
 
 Producto::Producto(){
-_estado=true;
+_estado=false;
 }
 
 void Producto::setDescripcion(string descripcion){
@@ -194,7 +194,7 @@ void Producto::set_id(int id) {
             cin>>_temporada;
 
         }
-        _estado=true;
+        //_estado=false;
 
         //cout<<"Ingrese Estado (0)Inactivo, (1)Activo: "<<endl;
         //cin>>_estado;
@@ -206,13 +206,13 @@ void Producto::set_id(int id) {
     {
 
         cout<<"El Estado es: ";
-        if(_estado==true){
+        if(_estado==false){
             cout<<"Activo"<<endl;
         } else {
             cout<<"Inactivo"<<endl;
 
         }
-        if(_estado==true){
+        if(_estado==false){
         cout<<"El ID es: "<<_id<<endl;
         cout<<"El Precio es: "<<_precio<<endl;
         cout<<"El Proveedor es: "<<_proveedor<<endl;

@@ -7,18 +7,27 @@ using namespace std;
 void ManagerProducto::Cargar(){
 
     Producto reg;
-    cout<<"INGRESE CODIGO DE PRODUCTO: ";
-    int id;
-    cin>>id;
-    reg.cargar(id);
-    arch.GuardarProducto(reg);
+    int pos=0, id;
 
+    while(pos>=0){
+    cout<<"INGRESE CODIGO DE PRODUCTO: ";
+    cin>>id;
+    pos = arch.BuscarIdProducto(id);
+    if(pos >= 0){
+        cout<<" ¡¡ CODIGO DE PRODUCTO EXISTENTE, INTENTE CON OTRO !! "<<endl;
+        system("pause");
+        system("cls");
+    }
+    }
+    if(pos<0){
+    reg.cargar(id);
     bool ok = arch.GuardarProducto(reg);
     if(ok){
         cout<<"**EL PRODUCTO SE GUARDO CORRECTAMENTE**"<<endl;
     }
     else{
         cout<<"!!EL PRODUCTO NO SE GUARDO CORRECTAMENTE!!"<<endl;
+        }
     }
 }
 
@@ -58,11 +67,15 @@ void ManagerProducto::ListarProductos(){
 
 int cant;
 cant = arch.archivoProductoContar();
+    cout<<"PRODUCTOS DADOS DE ALTA: "<<endl;
+    cout<<"**************************"<<endl;
 for(int i=0;i<cant;i++){
     Producto reg = arch.LeerProductoBuscado(i);
+    if(reg.getEstado() == false){
     MostrarRegistro(reg);
     cout<<"**************************"<<endl;
     }
+  }
 }
 /// HAY QUE ARMARLO BIEN CUANDO SE TENGA LA CLASE VENTAS 13/11
 /*
@@ -80,68 +93,49 @@ void ManagerProducto::ListarRecaudado(){
     cout<<"******************"<<endl;
 }
 */
-/// PARA REVISAR SI ELIMINA CORRECTAMENTE 13/11 ///
+
 void ManagerProducto::EliminarArticulo(){
 
-        int i,cantidad,id;
-        Producto producto;
-        cantidad=arch.archivoProductoContar();
+        int id;
+
+        int cantidad=arch.archivoProductoContar();
 
         cout<<"INGRESE CODIGO DE PRODUCTO A ELIMINAR: "<<endl;
         cin>>id;
-        while (cin.fail())
-        {
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(),'\n');
-            cout<<"Valor invalido, ingrese solo numeros"<<endl;
-            cout<<"Ingrese nuevamente el valor"<<endl;
-            cin>>id;
-
-        }
-
-        for(i=0;i<cantidad;i++){
-            producto=arch.leerProducto(i,producto);
-            if(id==producto.getId()){
-                arch.borrarProductoVoid(i);
-
+        int pos = arch.BuscarIdProducto(id);
+        if(pos >= 0){
+        for(int i=0;i<cantidad;i++){
+            Producto reg = arch.LeerProductoBuscado(i);
+            if(id == reg.getId()){
+                reg.set_estado(true);
+                arch.ModificarProducto(reg, i);
+                cout<<"**PRODUCTO ELIMINADO CORRECTAMENTE**"<<endl;
+                }
             }
-    }
+        }
+        else{
+            cout<<"¡¡ PRODUCTO NO ENCONTRADO EN LOS ARCHIVOS !!"<<endl;
+        }
 }
-///FIX
+
 void ManagerProducto::ModificarProducto(){
 
-        int i,id,cantidad;
-
-        archivo_producto arch("producto.dat");
-        cantidad=arch.archivoProductoContar();
-        Producto producto;
-
-        cout<<"Ingrese id de producto a modificar"<<endl;
+        int id, pos;
+        int cantidad = arch.archivoProductoContar();
+        cout<<"INGRESE ID A MODIFICAR"<<endl;
         cin>>id;
-        while (cin.fail())
-        {
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(),'\n');
-            cout<<"Valor invalido, ingrese solo numeros"<<endl;
-            cout<<"Ingrese nuevamente el valor"<<endl;
-            cin>>id;
+        pos = arch.BuscarIdProducto(id);
+        if(pos>=0){
+        for(int i=0;i<cantidad;i++){
+            Producto reg = arch.LeerProductoBuscado(i);
+                if(reg.getId() == id){
+                    reg.cargar(id);
+                    arch.ModificarProducto(reg,i);
 
-        }
-
-        for(i=0;i<cantidad;i++){
-
-                producto=arch.leerProducto(i,producto);
-
-                if(id==producto.getId()){
-                    producto.cargar(i);
-                    arch.ModificarProducto(producto,i);
-                    break;
                 }
-                if(i==cantidad-1){
-
-                    cout<<" Id no encontrado "<<endl;
-                }
+            }
         }
-
-
+    else{
+        cout<<"¡¡ PRODUCTO NO ENCONTRADO EN LOS ARCHIVOS, INTENTELO NUEVAMENTE !!"<<endl;
+    }
 }
