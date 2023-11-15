@@ -19,6 +19,7 @@ class archivo_cliente
         archivo_cliente(std::string nombre ){
         _nombre=nombre;
         }
+        
 
     private:
 
