@@ -7,6 +7,10 @@
 #include "empleado.h"
 #include "Persona.h"
 #include "Fecha.h"
+#include "producto.h"
+#include "Venta.h"
+#include "archivo_venta.h"
+#include "archivo_producto.h"
 
 class manager_vendedor{
 
@@ -19,6 +23,7 @@ public:
     void ListarVendedores();
     void EliminarVendedor();
     void MostrarVendedor(Empleado reg);
+    void CargarVenta();
 private:
 
 archivo_empleado arch = archivo_empleado("empleado.dat");
