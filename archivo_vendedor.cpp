@@ -111,7 +111,6 @@ int archivo_empleado::BuscarLegajoEmpleado(int legajo, Empleado reg){
 int archivo_empleado::BuscarEmpleadoenArchivo(int codigo){
     Empleado reg;
     int i=0;
-    int comprobar = -1;
     FILE *p=fopen(_nombre.c_str(), "rb");
     if(p==nullptr){
         return -1;
@@ -124,9 +123,8 @@ int archivo_empleado::BuscarEmpleadoenArchivo(int codigo){
         }
         i++;
     }
-    if(comprobar == -1){
-        return comprobar;
-    }
+
+    return -1;
 }
 
 Empleado archivo_empleado::Leer(int nroRegistro){
@@ -141,4 +139,5 @@ Empleado archivo_empleado::Leer(int nroRegistro){
     return reg;
 
 }
+
 
