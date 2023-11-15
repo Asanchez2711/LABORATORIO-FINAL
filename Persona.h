@@ -30,7 +30,7 @@ public:
         class Fecha getFechaDeAlta() const;
         bool getEstado() const;
 
-        void cargar();
+        void cargar(int f);
          void mostrar();
 
 
