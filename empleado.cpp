@@ -19,23 +19,15 @@ float Empleado::getTotalVendido() const
 
 void Empleado::mostrar() const
 {
-        cout<<"El Estado es: ";
-        if(getEstado()==true){
-            cout<<"Activo"<<endl;
-        } else {
-            cout<<"Inactivo"<<endl;
-        }
+
         if(getEstado()==true){
         cout<<"El Legajo es: "<<getLegajo()<<endl;
         cout<<"El nombre es: "<<getNombre()<<endl;
         cout<<"El apellido es: "<<getApellido()<<endl;
         cout<<"La Fecha de Alta es: "<<getFechaDeAlta().toString()<<endl;
         cout<<"El total vendido hasta la fecha es: "<<_totalVendido<<endl;
-       } else {
-        cout<<"Producto ya no se encuentra"<<endl;
-        }
+       }
 }
-
 void Empleado::SetEliminado(bool eliminado){
     _eliminado=eliminado;
 }
