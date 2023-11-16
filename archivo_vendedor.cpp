@@ -78,11 +78,11 @@ Empleado reg;
         return false;
     }
     while(fread(&reg,sizeof reg,1,pAlu)==1){
-
+if(reg.getEstado()==true){
         reg.mostrar();
         cout<<"************************************"<<endl;
         cout<<endl;
-    }
+    }}
     fclose(pAlu);
     return true;
 
