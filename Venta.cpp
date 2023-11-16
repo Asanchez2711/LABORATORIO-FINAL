@@ -34,7 +34,7 @@ int Venta::getidvendedor() const
     return _idvendedor;
 }
 
-Fecha Venta::setFecha()
+void Venta::setFecha()
 {
     _fechaVenta.cargar();
 }

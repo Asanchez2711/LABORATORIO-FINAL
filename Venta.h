@@ -32,7 +32,7 @@ public:
     const int* getidproducto() const;
     int getidvendedor() const;
 
-    Fecha setFecha();
+    void setFecha();
     void setPrecioVenta(float precioventa);
     void setCantidad(int cantidad);
     void setidVenta (int idventa);

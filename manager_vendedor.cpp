@@ -145,7 +145,7 @@ void manager_vendedor::BuscarVendedor(){
  void manager_vendedor::CargarVenta()
  {
 
-    Venta venta;
+     Venta venta;
     archivo_venta archventa;
     Producto prod;
     archivo_producto archpro("producto.dat");
@@ -170,12 +170,13 @@ void manager_vendedor::BuscarVendedor(){
         {
             cout<<"El empleado ingresado no existe  vuelva a ingresar ID de empleado"<<endl;
             cin>>idvendedor;
-            posidemple=archemple.BuscarLegajoEmpleado(idvendedor,emple);
+            posidemple=archemple.BuscarLegajoEmpleado(idvendedor,emple); // verificar si la posicion que otorga el metodo existe por que al mostrar el objeto cargado por leerEmpleado ya a arroja basura
 
         }
        cout<<"Ingrese fecha"<<endl;
        venta.setFecha();
     archemple.leerEmpleado(posidemple,emple);
+    emple.mostrar();
     venta.setidvendedor(idvendedor);
     while (band && resp != "no")
     {
@@ -195,9 +196,18 @@ void manager_vendedor::BuscarVendedor(){
         numerodeproductos++;
 
          prod= archpro.leerProducto(pos,prod);
-         cout <<"Usted a seleccionado "<<cantidad<<"prendas de la marca "<<prod.getMarca()<<endl;
+         cout <<"Usted a seleccionado "<<cantidad<<" prendas de la marca "<<prod.getMarca()<<endl;
+         while (prod.getCantidad()<cantidad)
+         {
+             cout<<"No se dispone de dicha cantidad en stock, hay en existencia: "<<prod.getCantidad()<<endl;
+            cout<<"Ingrese nuevamente la cantidad"<<endl;
+            cin>>cantidad;
+
+         }
+
          totalventa+=(prod.getPrecio()*cantidad);
-         prod.setCantidad(prod.getCantidad()-cantidad);
+         int c= prod.getCantidad()-cantidad;
+         prod.setCantidad(c);
          archpro.ModificarProducto(prod,pos);
          cout<<"¿Desea ingresar otro producto? si/no"<<endl;
          cin.ignore();
@@ -224,7 +234,7 @@ void manager_vendedor::BuscarVendedor(){
     emple.setTotalVendido(totalventa);
     venta.setidVenta((archventa.archivoVentaContar()+1));
     archventa.GuardarVenta(venta);
-    archemple.ModificarEmpleado(emple,posidemple);
+    archemple.ModificarEmpleado(emple,posidemple); ///Verificar donde se rompe y se corrempe empleado al modificar pos en archivo_empleado
 
 
 

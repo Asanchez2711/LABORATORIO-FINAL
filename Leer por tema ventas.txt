@@ -1,0 +1,2 @@
+Revisar metodos de archivo_empleado cuando se apertura el archivo con la posicion otorgada por BuscarLegajoEmpleado y posteriormente se apertura 
+con leerEmpleado ya arroja errores puede ser que se este aperturando una posicion inexistente
