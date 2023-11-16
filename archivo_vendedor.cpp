@@ -49,7 +49,7 @@ int archivo_empleado:: archivoEmpleadoContar(){
         return false;
     }
     fseek(p,sizeof (Empleado)*pos,0);
-    bool escribio=fwrite(&reg,sizeof reg,1,p);
+    bool escribio=fwrite(&reg,sizeof (Empleado),1,p);
     fclose(p);
     return escribio;
 

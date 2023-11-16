@@ -175,7 +175,7 @@ void manager_vendedor::BuscarVendedor(){
         }
        cout<<"Ingrese fecha"<<endl;
        venta.setFecha();
-    archemple.leerEmpleado(posidemple,emple);
+    emple =archemple.leerEmpleado(posidemple,emple);
     emple.mostrar();
     venta.setidvendedor(idvendedor);
     while (band && resp != "no")
