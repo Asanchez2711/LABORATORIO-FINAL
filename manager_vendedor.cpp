@@ -1,4 +1,5 @@
 #include "manager_vendedor.h"
+#include "archivo_cliente.h"
 
 void manager_vendedor::CargarVendedor(){
 
@@ -18,7 +19,11 @@ archivo_empleado arch("empleado.dat");
     obj.setLegajo(v);
 
     arch.GuardarEmpleado(obj);}
-    else cout<<"REGISTRO REPETIDO"<<endl;
+
+  if(r!=-1){cout<<"EL ID QUE YA EXISTE !!"<<endl;}
+cout<<endl;
+  system("pause");
+    system("cls");
 }
 
 void manager_vendedor::TotalRecaudado(){
@@ -162,7 +167,12 @@ void manager_vendedor::BuscarVendedor(){
     float totalventa=0;
     bool band=true;
     string resp;
+    int val=1;
+    int posidemple;
+    int ncliente;
+    archivo_cliente archivoCLiente("cliente.dat");
 
+    while(val==1){
     cout<<"Ingrese ID vendedor"<<endl;
     cin>>idvendedor;
    int posidemple= archemple.BuscarLegajoEmpleado(idvendedor,emple);
@@ -172,12 +182,49 @@ void manager_vendedor::BuscarVendedor(){
             cin>>idvendedor;
             posidemple=archemple.BuscarLegajoEmpleado(idvendedor,emple); // verificar si la posicion que otorga el metodo existe por que al mostrar el objeto cargado por leerEmpleado ya a arroja basura
 
-        }
-       cout<<"Ingrese fecha"<<endl;
+        }/// ingrese id de cliente(verificar que el cliente existe)
+        //verificar si al momento de la venta el cliente exitia, lo mismo con el stock del producto y el cliente.
+        // osea no podemos cargar una venta con id de vendedor con fecha de alta 20/11/2023 y pretender que ese venddedor se cargue una venta fecha anterior
+        //lo mismo con empleado.
+
+
+
+
+       cout<<"Ingrese fecha de la venta "<<endl;
        venta.setFecha();
     emple =archemple.leerEmpleado(posidemple,emple);
     emple.mostrar();
-    venta.setidvendedor(idvendedor);
+    if(venta.getFechaVenta().getAnio()>emple.getFechaDeAlta().getAnio()){
+            val=0;
+    venta.setidvendedor(idvendedor);}
+    else{if(venta.getFechaVenta().getMes()>emple.getFechaDeAlta().getMes())
+
+        {
+            venta.setidvendedor(idvendedor);
+            val=0;
+        }
+        else{
+                if(venta.getFechaVenta().getDia()>=emple.getFechaDeAlta().getDia()){
+                venta.setidvendedor(idvendedor);
+                val=0;
+
+
+                }
+
+        else{
+                cout<<endl;
+                cout<<"Al momento de realizar esta venta no hay registros del vendedor indicado"<<endl;
+                cout<<endl; val=1;
+        }
+                }
+
+    }
+
+    }
+
+
+
+
     while (band && resp != "no")
     {
         cout<<"Ingrese ID producto"<<endl;
@@ -192,6 +239,30 @@ void manager_vendedor::BuscarVendedor(){
             pos=archpro.BuscarIdProducto(idproducto);
 
         }
+        int clte;
+
+
+
+        cout<<"Ingrese el numero del  cliente: "<<endl;
+        cin>>ncliente;
+        clte=archivoCLiente.BuscarIdCliente(ncliente);//agregue la funcion buscar id cliente que solo necesita un int.
+
+
+ while(clte==-1){
+
+            cout<<endl;
+            cout<<"El cliente no existe! "<<endl;
+            cout<<endl;
+            cout<<"Ingrese un cliente existente: "<<endl;
+            cin>>ncliente;
+
+            clte=archivoCLiente.BuscarIdCliente(ncliente);
+
+
+
+        }
+
+
         cantidadproductos[numerodeproductos]=idproducto;
         numerodeproductos++;
 

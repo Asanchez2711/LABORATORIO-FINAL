@@ -15,11 +15,12 @@ class archivo_cliente
         bool ModificarCliente(Cliente reg,int pos);
         bool GuardarCliente(Cliente reg);
         bool ListarClientes();
+        int BuscarIdCliente(int legajo);
         int BuscarLegajoCliente(int legajo, Cliente reg);
         archivo_cliente(std::string nombre ){
         _nombre=nombre;
         }
-        
+
 
     private:
 

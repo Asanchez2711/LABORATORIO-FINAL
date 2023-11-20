@@ -95,6 +95,27 @@ Cliente reg;
  }
 
 
+ int archivo_cliente::BuscarIdCliente(int id){
+Cliente reg;
+
+    FILE *p;
+    p=fopen(_nombre.c_str(), "rb");
+    int pos=0;
+    if(p==NULL){
+        return -2;
+    }
+    while(fread(&reg,sizeof reg,1,p)==1){
+        if(id==reg.getLegajo()){
+            fclose(p);
+            return pos;
+        }
+        pos++;
+    }
+    fclose(p);
+    return -1;
+}
+
+
  int archivo_cliente::BuscarLegajoCliente(int legajo, Cliente reg){
 
 
