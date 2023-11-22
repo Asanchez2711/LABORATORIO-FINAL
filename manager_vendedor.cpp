@@ -1,3 +1,4 @@
+#include "Persona.h"
 #include "manager_vendedor.h"
 #include "archivo_cliente.h"
 
@@ -171,6 +172,7 @@ void manager_vendedor::BuscarVendedor(){
     int posidemple;
     int ncliente;
     archivo_cliente archivoCLiente("cliente.dat");
+    Cliente objCliente;
 
     while(val==1){
     cout<<"Ingrese ID vendedor"<<endl;
@@ -243,24 +245,54 @@ void manager_vendedor::BuscarVendedor(){
 
 
 
-        cout<<"Ingrese el numero del  cliente: "<<endl;
-        cin>>ncliente;
-        clte=archivoCLiente.BuscarIdCliente(ncliente);//agregue la funcion buscar id cliente que solo necesita un int.
-
-
- while(clte==-1){
-
-            cout<<endl;
-            cout<<"El cliente no existe! "<<endl;
-            cout<<endl;
-            cout<<"Ingrese un cliente existente: "<<endl;
-            cin>>ncliente;
-
-            clte=archivoCLiente.BuscarIdCliente(ncliente);
+cout<<"Ingrese el numero del  cliente: "<<endl;
+cin>>ncliente;
+clte=archivoCLiente.BuscarIdCliente(ncliente);//agregue la funcion buscar id cliente que solo necesita un int.
 
 
 
+int aux;
+
+//falta validar cuando si al momento de hacer la compra existia el cliente
+
+while (clte == -1) {
+    cout << endl;
+    cout << "EL CLIENTE NO EXISTE!!, DESEA CARGAR UN NUEVO CLIENTE ? " << endl;
+    cout << endl;
+    cout << "PRESIONE 1 PARA CARGAR UN NUEVO CLIENTE // 2 PARA REALIZAR UNA NUEVA BUSQUEDA " << endl;
+
+    while (true) {
+        cin >> aux;
+
+
+        if (cin.fail() || (aux != 1 && aux != 2)) {
+            cout << "Por favor, ingrese un numero valido (1 o 2)." << endl;
+
+            cin.clear();
+
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        } else {
+
+            break;
         }
+    }
+
+    cout << endl;
+
+    if (aux == 1) {
+        objCliente.cargar(ncliente);
+        archivoCLiente.GuardarCliente(objCliente);
+    } else if (aux == 2) {
+        cout << "Ingrese el numero del cliente: " << endl;
+        cin >> ncliente;
+        clte = archivoCLiente.BuscarIdCliente(ncliente);
+    }
+}
+
+
+
+
+
 
 
         cantidadproductos[numerodeproductos]=idproducto;
