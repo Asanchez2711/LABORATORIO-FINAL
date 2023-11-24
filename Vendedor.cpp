@@ -1,30 +1,5 @@
 #include "Vendedor.h"
 
-int VerificaOp(){
-
-        // Verificar si la entrada es un número entero
-        int opcion;
-        while(true){
-        std::cout<<">>";
-        while (!(std::cin>>opcion) || std::cin.peek() != '\n') {
-            std::cin.clear();  // Limpiar el estado de error
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // Descartar la entrada no válida
-            std::cout << "Entrada no valida. Por favor, ingrese un numero entero.\n";
-
-            std::cout << ">>";
-        }
-
-        // Verificar si la entrada está en el rango deseado
-        if (opcion < 0 || opcion > 6) {
-            std::cout << "Opcion no valida. Debe estar entre 0 y 6.\n";
-
-            continue;  // Volver al inicio del bucle
-
-        }
-        return opcion;
-      }
-}
-
 using namespace std;
 void Vendedor_menu::MenuVendedor(){
 
@@ -42,18 +17,30 @@ cout<<"5-CARGAR COMPRA"<<endl;
 cout<<"6-VER IMPORTE COMISIONADO HASTA EL MOMENTO"<<endl;
 cout<<"***************************"<<endl;
 cout<<"0-SALIR"<<endl;
-
-int op = VerificaOp();
+int opcion;
+cout<<">>";
+cin>>opcion;
 system("cls");
-switch(op){
+switch(opcion){
 
 case 1:{
 int legajo;
-        cout<<"ESTA POR GUARDAR UN CLIENTE"<<endl;
-        Cliente cliente;
-        cout<<endl;
-        cout<<"Ingrese el numero de legajo del cliente: "<<endl;
-        cin>>legajo;
+
+    std::cout << "ESTA POR GUARDAR UN CLIENTE" << std::endl;
+    Cliente cliente; // Asegúrate de tener la clase Cliente definida
+
+    do {
+        std::cout << "Ingrese el numero de legajo del cliente: ";
+        std::cin >> legajo;
+
+        if (std::cin.fail() || legajo <= 0) {
+            std::cin.clear(); // Limpiar el indicador de error
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Descartar la entrada incorrecta
+            std::cout << "Por favor, ingrese un numero de legajo mayor a cero." << std::endl;
+        } else {
+            break; // Salir del bucle si la entrada es válida
+        }
+    } while (true);
         cliente.cargar(legajo);
         archivo_cliente arch("cliente.dat");
         arch.GuardarCliente(cliente);
@@ -65,6 +52,8 @@ int legajo;
 case 2:{
     cout<<"ESTA POR BORRAR UN CLIENTE"<<endl;
         Cliente cliente;
+        int contador =0;
+
         int legajo,i,posicion;
         archivo_cliente arch("cliente.dat");
         int cantidad=arch.archivoClienteContar();
@@ -83,10 +72,14 @@ case 2:{
     posicion=arch.BuscarLegajoCliente(legajo,cliente);
     cliente=arch.leerCliente(posicion,cliente);
 
-    if(cliente.getLegajo()==legajo){
+    if(cliente.getLegajo()==legajo&&(cliente.getEstado()==true)){
         cliente.mostrar();
+        contador++;
+
+
+
     } else {
-        cout<<"No hay ningun cliente con el legajo "<<legajo<<endl;
+           if(contador==0){cout<<"No hay ningun cliente con el legajo "<<legajo<<endl;}
     }
        /*
        for(i=0;i<cantidad;i++){
@@ -108,6 +101,9 @@ case 2:{
                     arch.BorrarCliente(cliente,i);
                 }
         }
+        cout<<endl;
+        cout<<"CLIENTE BORRADO"<<endl;
+        cout<<endl;
         system("pause");
         system("cls");
         break;
@@ -122,30 +118,10 @@ case 3:{
 }
 
 case 4:{
-    int legajo,posicion;
-    archivo_cliente arch("cliente.dat");
-    Cliente cliente;
-    cout<<"Ingrese el legajo del cliente a buscar"<<endl;
-    cin>>legajo;
-    while(cin.fail()){
-            if (std::cin.fail()) {
-            std::cin.clear();  // Limpiar el estado de error
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // Descartar la entrada no válida
-            std::cout << "Entrada no valida. Por favor, ingrese un numero entero.\n";
-            cin>>legajo;
 
-        }
-    posicion=arch.BuscarLegajoCliente(legajo,cliente);
-    cliente=arch.leerCliente(posicion,cliente);
-    if(cliente.getLegajo()==legajo){
-        cliente.mostrar();
-    } else {
-        cout<<"No hay ningun cliente con el legajo "<<legajo<<endl;
-    }
-    system("pause");
-    system("cls");
+    manager_vendedor v;
+    v.buscarCliente();
     break;
-}
 }
 
 case 5:
