@@ -664,3 +664,173 @@
 1700071000 source:c:\users\alejandro\desktop\subir_git\modificar\backup-final\laboratorio-final\venta.cpp
 	"Venta.h"
 
+1700853176 source:c:\users\alejandro\desktop\proyecto_final\subir a git\laboratorio-final\administrador.cpp
+	<iostream>
+	"administrador.h"
+
+1700851210 c:\users\alejandro\desktop\proyecto_final\subir a git\laboratorio-final\administrador.h
+	<iostream>
+	<cstdio>
+	<cstring>
+	"manager.h"
+	"manager_vendedor.h"
+
+1700851210 c:\users\alejandro\desktop\proyecto_final\subir a git\laboratorio-final\manager.h
+	<iostream>
+	<cstdio>
+	<limits>
+	<cstring>
+	"archivo_producto.h"
+	"producto.h"
+
+1700851210 c:\users\alejandro\desktop\proyecto_final\subir a git\laboratorio-final\archivo_producto.h
+	<iostream>
+	<cstdio>
+	<cstring>
+	"Producto.h"
+
+1700851210 c:\users\alejandro\desktop\proyecto_final\subir a git\laboratorio-final\producto.h
+	<iostream>
+	<cstdio>
+	<cstring>
+	"Fecha.h"
+
+1700851210 c:\users\alejandro\desktop\proyecto_final\subir a git\laboratorio-final\fecha.h
+	<iostream>
+	<string.h>
+
+1700851210 c:\users\alejandro\desktop\proyecto_final\subir a git\laboratorio-final\manager_vendedor.h
+	<iostream>
+	<cstdio>
+	"archivo_vendedor.h"
+	"empleado.h"
+	"Persona.h"
+	"Fecha.h"
+	"producto.h"
+	"Venta.h"
+	"archivo_venta.h"
+	"archivo_producto.h"
+
+1700851210 c:\users\alejandro\desktop\proyecto_final\subir a git\laboratorio-final\archivo_vendedor.h
+	<iostream>
+	<string>
+	<cstdio>
+	"Persona.h"
+	"empleado.h"
+
+1700851210 c:\users\alejandro\desktop\proyecto_final\subir a git\laboratorio-final\persona.h
+	<iostream>
+	<string>
+	<limits>
+	"Fecha.h"
+
+1700851210 c:\users\alejandro\desktop\proyecto_final\subir a git\laboratorio-final\empleado.h
+	<iostream>
+	<string>
+	<cstdio>
+	"Fecha.h"
+	"Persona.h"
+
+1700851210 c:\users\alejandro\desktop\proyecto_final\subir a git\laboratorio-final\venta.h
+	<iostream>
+	"Producto.h"
+	"Empleado.h"
+	"Fecha.h"
+
+1700851210 c:\users\alejandro\desktop\proyecto_final\subir a git\laboratorio-final\archivo_venta.h
+	"Venta.h"
+
+1700852884 source:c:\users\alejandro\desktop\proyecto_final\subir a git\laboratorio-final\aplicacion.cpp
+	<iostream>
+	<limits>
+	"aplicacion.h"
+
+1700851210 c:\users\alejandro\desktop\proyecto_final\subir a git\laboratorio-final\aplicacion.h
+	<iostream>
+	<cstdio>
+	"administrador.h"
+	"Vendedor.h"
+	"manager.h"
+
+1700851210 c:\users\alejandro\desktop\proyecto_final\subir a git\laboratorio-final\vendedor.h
+	<iostream>
+	<cstdio>
+	"Cliente.h"
+	"archivo_cliente.h"
+	"manager_vendedor.h"
+
+1700851210 c:\users\alejandro\desktop\proyecto_final\subir a git\laboratorio-final\cliente.h
+	<iostream>
+	<string>
+	"Fecha.h"
+	"Persona.h"
+
+1700851210 c:\users\alejandro\desktop\proyecto_final\subir a git\laboratorio-final\archivo_cliente.h
+	<iostream>
+	<string>
+	"Cliente.h"
+
+1700851210 source:c:\users\alejandro\desktop\proyecto_final\subir a git\laboratorio-final\archivo_cliente.cpp
+	"archivo_cliente.h"
+	<iostream>
+	<string>
+
+1700851647 source:c:\users\alejandro\desktop\proyecto_final\subir a git\laboratorio-final\archivo_vendedor.cpp
+	"archivo_vendedor.h"
+	"empleado.h"
+
+1700851210 source:c:\users\alejandro\desktop\proyecto_final\subir a git\laboratorio-final\archivo_venta.cpp
+	"archivo_venta.h"
+	<iostream>
+	<string>
+
+1700851210 source:c:\users\alejandro\desktop\proyecto_final\subir a git\laboratorio-final\cliente.cpp
+	"Cliente.h"
+	<iostream>
+	<string>
+	"Fecha.h"
+
+1700851210 source:c:\users\alejandro\desktop\proyecto_final\subir a git\laboratorio-final\empleado.cpp
+	"Empleado.h"
+	"Fecha.h"
+
+1700851210 source:c:\users\alejandro\desktop\proyecto_final\subir a git\laboratorio-final\fecha.cpp
+	<limits>
+	"Fecha.h"
+
+1700851210 source:c:\users\alejandro\desktop\proyecto_final\subir a git\laboratorio-final\main.cpp
+	<iostream>
+	<cstdio>
+	"aplicacion.h"
+
+1700851210 source:c:\users\alejandro\desktop\proyecto_final\subir a git\laboratorio-final\manager.cpp
+	<iostream>
+	"Fecha.h"
+	"manager.h"
+
+1700851210 source:c:\users\alejandro\desktop\proyecto_final\subir a git\laboratorio-final\manager_vendedor.cpp
+	"Persona.h"
+	"manager_vendedor.h"
+	"archivo_cliente.h"
+
+1700851210 source:c:\users\alejandro\desktop\proyecto_final\subir a git\laboratorio-final\persona.cpp
+	"Persona.h"
+	<cctype>
+
+1700851210 source:c:\users\alejandro\desktop\proyecto_final\subir a git\laboratorio-final\producto.cpp
+	"Producto.h"
+	<string>
+	<limits>
+
+1700851210 source:c:\users\alejandro\desktop\proyecto_final\subir a git\laboratorio-final\vendedor.cpp
+	"Vendedor.h"
+
+1700851210 source:c:\users\alejandro\desktop\proyecto_final\subir a git\laboratorio-final\venta.cpp
+	"Venta.h"
+
+1700851498 source:c:\users\alejandro\desktop\proyecto_final\subir a git\laboratorio-final\archivo_producto.cpp
+	<iostream>
+	<string>
+	<vector>
+	"archivo_producto.h"
+

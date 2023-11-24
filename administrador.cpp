@@ -3,6 +3,31 @@ using namespace std;
 
 #include "administrador.h"
 
+int VerificaNumero(){
+
+        // Verificar si la entrada es un número entero
+        int opcion;
+        while(true){
+        std::cout<<">>";
+        while (!(std::cin>>opcion) || std::cin.peek() != '\n') {
+            std::cin.clear();  // Limpiar el estado de error
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // Descartar la entrada no válida
+            std::cout << "Entrada no valida. Por favor, ingrese un numero entero.\n";
+
+            std::cout << ">>";
+        }
+
+        // Verificar si la entrada está en el rango deseado
+        if (opcion < 0 || opcion > 12) {
+            std::cout << "Opcion no valida. Debe estar entre 0 y 12.\n";
+
+            continue;  // Volver al inicio del bucle
+
+        }
+        return opcion;
+      }
+}
+
 void Admin::MenuAdmin(){
 
 while(true){
@@ -27,11 +52,11 @@ while(true){
     cout<<"12-BUSCAR PRODUCTO"<<endl;
     cout<<"***************************"<<endl;
     cout<<"0-VOLVER"<<endl;
-    int opcion;
-    cout<<">>";
-    cin>>opcion;
+
+    int op = VerificaNumero();
+
     system("cls");
-    switch(opcion){
+    switch(op){
 
 case 1:
     _manager.Cargar();
