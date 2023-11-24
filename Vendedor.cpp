@@ -43,7 +43,6 @@ int legajo;
         cout<<endl;
         cout<<"Ingrese el numero de legajo del cliente: "<<endl;
         cin>>legajo;
-        //falta validar si el legajo ya existe, si ya existe no deberia poder cargarse, en el caso de querer de que el estado este false se debe sobreescribir
         cliente.cargar(legajo);
         archivo_cliente arch("cliente.dat");
         arch.GuardarCliente(cliente);
