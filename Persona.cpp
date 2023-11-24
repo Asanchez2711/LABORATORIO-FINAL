@@ -1,4 +1,18 @@
 #include "Persona.h"
+#include <cctype>
+
+
+bool Persona::esSoloLetras(const char *cadena)
+{
+    for (int i = 0; cadena[i] != '\0'; ++i)
+    {
+        if (!isalpha(cadena[i]) && cadena[i] != ' ')
+        {
+            return false; // Se encontró un carácter que no es una letra ni un espacio
+        }
+    }
+    return true; // Todos los caracteres son letras o espacios
+}
 
 void Persona::setLegajo(int legajo)
 {
@@ -49,33 +63,69 @@ bool Persona::getEstado() const
     return _estado;
 }
 
-void Persona::cargar(int f)
-{
-    _estado=true;
 
+void Persona::cargar(int f) {
+    _estado = true;
+    char opcionTerminar;
 
-    while (cin.fail())
-        {
+    while (f <= 0 || cin.fail()) {
+        if (cin.fail()) {
             cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(),'\n');
-            cout<<"Valor invalido, ingrese solo numeros"<<endl;
-            cout<<"Ingrese nuevamente el valor"<<endl;
-            _legajo=f;
-
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Valor invalido, ingrese solo numeros" << endl;
+        } else {
+            cout << "Valor invalido, ingrese un numero mayor a cero" << endl;
         }
-    cout<<"Ingrese nombre: "<<endl;
+
+        cout << "Ingrese nuevamente el valor (o 'T' para terminar): ";
+        cin >> opcionTerminar;
+
+        if (toupper(opcionTerminar) == 'T') {
+            cout << "Carga de datos terminada por el usuario." << endl;
+            return;
+        }
+
+        cin >> f;
+    }
+
+    _legajo = f;
+
+    cout << "Ingrese nombre: " << endl;
     cin.ignore();
     cin.getline(_nombre, 30);
-    cout<<"Ingrese apellido: "<<endl;
-    cin.getline(_apellido, 30);
-    cout<<"Ingrese fecha de Alta de forma ordenada"<<endl;
-    _fechaDeAlta.cargar();
-    while(_fechaDeAlta.getAnio()==0){
-            cout<<"La fecha ingresada no existe en el calendario, ingrese una fecha valida"<<endl;
-            _fechaDeAlta.cargar();
+
+    while (!esSoloLetras(_nombre)) {
+        cout << "Nombre invalido, ingrese solo letras (o 'T' para terminar)" << endl;
+        cout << "Ingrese nuevamente el nombre: ";
+        cin.getline(_nombre, 30);
+
+        if (toupper(_nombre[0]) == 'T') {
+            cout << "Carga de datos terminada por el usuario." << endl;
+            return;
         }
+    }
 
+    cout << "Ingrese apellido: " << endl;
+    cin.getline(_apellido, 30);
 
+    while (!esSoloLetras(_apellido)) {
+        cout << "Apellido invalido, ingrese solo letras (o 'T' para terminar)" << endl;
+        cout << "Ingrese nuevamente el apellido: ";
+        cin.getline(_apellido, 30);
+
+        if (toupper(_apellido[0]) == 'T') {
+            cout << "Carga de datos terminada por el usuario." << endl;
+            return;
+        }
+    }
+
+    cout << "Ingrese fecha de Alta de forma ordenada" << endl;
+    _fechaDeAlta.cargar();
+
+    while (_fechaDeAlta.getAnio() == 0) {
+        cout << "La fecha ingresada no existe en el calendario, ingrese una fecha valida" << endl;
+        _fechaDeAlta.cargar();
+    }
 }
 
 void Persona::mostrar()

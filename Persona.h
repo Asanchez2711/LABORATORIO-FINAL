@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <limits>
+
 #include "Fecha.h"
 using namespace std;
 class Persona{
@@ -29,9 +30,12 @@ public:
         string getApellido() const;
         class Fecha getFechaDeAlta() const;
         bool getEstado() const;
+        bool esSoloLetras(const char *cadena);
 
         void cargar(int f);
          void mostrar();
+
+
 
 
 };
