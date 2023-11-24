@@ -357,33 +357,43 @@ while (clte == -1) {
  }
 
 
- void manager_vendedor::buscarCliente(){
-     int cliente;
-      do {
-        std::cout << "Ingrese el cliente a buscar: ";
+void manager_vendedor::buscarCliente() {
+    int cliente;
+    bool entradaValida = false;
+
+    do {
+        std::cout << "Ingrese el cliente a buscar (o ingrese 0 para cancelar): ";
         std::cin >> cliente;
 
-        if (std::cin.fail() || cliente <= 0) {
+        if (std::cin.fail()) {
             std::cin.clear(); // Limpiar el indicador de error
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Descartar la entrada incorrecta
-            std::cout << "Por favor, ingrese un número mayor a cero." << std::endl;
+            std::cout << "Por favor, ingrese un numero valido." << std::endl;
+        } else if (cliente == 0) {
+
+            return; // Salir de la función si el usuario cancela
+        } else if (cliente < 0) {
+            std::cout << "Por favor, ingrese un número mayor o igual a cero." << std::endl;
         } else {
-            break; // Salir del bucle si la entrada es válida
+            entradaValida = true; // La entrada es válida, salir del bucle
         }
-    } while (true);
+    } while (!entradaValida);
 
     archivo_cliente arch("cliente.dat");
     int aux;
-Cliente reg;
+    Cliente reg;
 
-    aux=arch.BuscarIdCliente(cliente);
+    aux = arch.BuscarIdCliente(cliente);
 
-    if(aux>=0){
-
-
-       reg=arch.leerCliente(cliente,reg);
-reg.Mostrar();
+    if (aux >= 0) {
+        reg = arch.leerCliente(cliente, reg);
+        reg.Mostrar();
     }
-
- }
+    else{cout<<endl;
+    cout<<"NO EXISTE EL CLIENTE !! "<<endl;
+    cout<<endl;
+    system("pause");
+    system("cls");
+    }
+}
 
