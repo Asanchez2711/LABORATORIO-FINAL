@@ -12,6 +12,7 @@ archivo_empleado arch("empleado.dat");
     cout<<"Ingrese el id del vendedor"<<endl;
     cin>>v;
     cout<<endl;
+    cout<<endl;
    r=arch.BuscarEmpleadoenArchivo(v);
 
    if(r==-1){
@@ -39,7 +40,7 @@ void manager_vendedor::TotalRecaudado(){
             empleado=arch.leerEmpleado(i,empleado);
             total=empleado.getTotalVendido()+total;
         }
-
+cout<<endl;
         cout<<"El total recaudado es "<<total<<endl<<endl;
 }
 
@@ -51,8 +52,11 @@ void manager_vendedor::TotalRecaudadoXVendedor(){
 
         for(i=0;i<cantidad;i++){
             empleado=arch.leerEmpleado(i,empleado);
+            cout<<endl;
+
 
             cout<<"EL TOTAL RECAUDADO POR EL VENDEDOR "<<empleado.getNombre()<<" ES: $"<<empleado.getTotalVendido()<<endl<<endl;
+            cout<<endl;
         }
 }
 
@@ -130,15 +134,20 @@ void manager_vendedor::MostrarVendedor(Empleado reg){
     cout<<"LEGAJO: "<<reg.getLegajo()<<endl;
     cout<<"NOMBRE: "<<reg.getNombre()<<endl;
     cout<<"APELLIDO: "<<reg.getApellido()<<endl;
+    cout<<endl;
 
 }
 
 
 void manager_vendedor::BuscarVendedor(){
+    int pos;
     int legajo;
+
+
     cout<<"INGRESE LEGAJO A BUSCAR :";
     cin>>legajo;
-    int pos;
+
+
     pos = arch.BuscarEmpleadoenArchivo(legajo);
     if(pos>=0){
         Empleado reg = arch.Leer(pos);
@@ -288,6 +297,7 @@ while (clte == -1) {
         cout << "Ingrese el numero del cliente: " << endl;
         cin >> ncliente;
         clte = archivoCLiente.BuscarIdCliente(ncliente);
+
     }
 }
 
@@ -343,6 +353,37 @@ while (clte == -1) {
 
 
 
+
+ }
+
+
+ void manager_vendedor::buscarCliente(){
+     int cliente;
+      do {
+        std::cout << "Ingrese el cliente a buscar: ";
+        std::cin >> cliente;
+
+        if (std::cin.fail() || cliente <= 0) {
+            std::cin.clear(); // Limpiar el indicador de error
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Descartar la entrada incorrecta
+            std::cout << "Por favor, ingrese un número mayor a cero." << std::endl;
+        } else {
+            break; // Salir del bucle si la entrada es válida
+        }
+    } while (true);
+
+    archivo_cliente arch("cliente.dat");
+    int aux;
+Cliente reg;
+
+    aux=arch.BuscarIdCliente(cliente);
+
+    if(aux>=0){
+
+
+       reg=arch.leerCliente(cliente,reg);
+reg.Mostrar();
+    }
 
  }
 

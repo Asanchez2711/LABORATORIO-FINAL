@@ -33,7 +33,9 @@ void Cliente::Mostrar() const{
         cout<<"El nombre es: "<<getNombre()<<endl;
         cout<<"El apellido es: "<<getApellido()<<endl;
         cout<<"La Fecha de Alta es: "<<_fechaDeAlta.toString();
+        cout<<endl;
         cout<<"El total gastado hasta la fecha es: "<<_totalGastado<<endl;
+        cout<<endl;
         } else {
         cout<<"Producto ya no se encuentra"<<endl;
         }

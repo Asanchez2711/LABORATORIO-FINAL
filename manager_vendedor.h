@@ -24,6 +24,7 @@ public:
     void EliminarVendedor();
     void MostrarVendedor(Empleado reg);
     void CargarVenta();
+    void buscarCliente();
 private:
 
 archivo_empleado arch = archivo_empleado("empleado.dat");
