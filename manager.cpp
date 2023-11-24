@@ -14,7 +14,7 @@ void ManagerProducto::Cargar(){
     cin>>id;
     pos = arch.BuscarIdProducto(id);
     if(pos >= 0){
-        cout<<" ¡¡ CODIGO DE PRODUCTO EXISTENTE, INTENTE CON OTRO !! "<<endl;
+        cout<<" Â¡Â¡ CODIGO DE PRODUCTO EXISTENTE, INTENTE CON OTRO !! "<<endl;
         system("pause");
         system("cls");
     }
@@ -98,15 +98,18 @@ void ManagerProducto::EliminarArticulo(){
 
         int id;
 
+        Producto producto;
         int cantidad=arch.archivoProductoContar();
 
         cout<<"INGRESE CODIGO DE PRODUCTO A ELIMINAR: "<<endl;
         cin>>id;
         int pos = arch.BuscarIdProducto(id);
-        if(pos >= 0){
+        producto=arch.leerProducto(pos,producto);
+
+        if(pos >= 0 && producto.getEstado()==false){
         for(int i=0;i<cantidad;i++){
             Producto reg = arch.LeerProductoBuscado(i);
-            if(id == reg.getId()){
+            if(id == reg.getId() && reg.getEstado()==false){
                 reg.set_estado(true);
                 arch.ModificarProducto(reg, i);
                 cout<<"**PRODUCTO ELIMINADO CORRECTAMENTE**"<<endl;
@@ -114,7 +117,7 @@ void ManagerProducto::EliminarArticulo(){
             }
         }
         else{
-            cout<<"¡¡ PRODUCTO NO ENCONTRADO EN LOS ARCHIVOS !!"<<endl;
+            cout<<"Â¡Â¡ PRODUCTO NO ENCONTRADO EN LOS ARCHIVOS !!"<<endl;
         }
 }
 
@@ -136,6 +139,6 @@ void ManagerProducto::ModificarProducto(){
             }
         }
     else{
-        cout<<"¡¡ PRODUCTO NO ENCONTRADO EN LOS ARCHIVOS, INTENTELO NUEVAMENTE !!"<<endl;
+        cout<<"Â¡Â¡ PRODUCTO NO ENCONTRADO EN LOS ARCHIVOS, INTENTELO NUEVAMENTE !!"<<endl;
     }
 }
