@@ -71,6 +71,8 @@ case 5:
 case 6:
     _managerVendedor.TotalRecaudadoXVendedor();
 
+
+
     system("pause");
     system("cls");
 

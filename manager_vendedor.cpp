@@ -1,3 +1,4 @@
+
 #include "Persona.h"
 #include "manager_vendedor.h"
 #include "archivo_cliente.h"
@@ -249,15 +250,16 @@ cout<<"Ingrese el numero del  cliente: "<<endl;
 cin>>ncliente;
 clte=archivoCLiente.BuscarIdCliente(ncliente);//agregue la funcion buscar id cliente que solo necesita un int.
 
-
-
+//  hay que armar una funcion que solo reciba un int y despues hacer las validaciones de fecha archivoCLiente.leerCliente(ncliente,objCliente);
 int aux;
 
 //falta validar cuando si al momento de hacer la compra existia el cliente
+/// podria a
 
 while (clte == -1) {
     cout << endl;
     cout << "EL CLIENTE NO EXISTE!!, DESEA CARGAR UN NUEVO CLIENTE ? " << endl;
+    cout<<endl;
     cout << endl;
     cout << "PRESIONE 1 PARA CARGAR UN NUEVO CLIENTE // 2 PARA REALIZAR UNA NUEVA BUSQUEDA " << endl;
 
