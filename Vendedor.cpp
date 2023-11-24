@@ -1,46 +1,49 @@
 #include "Vendedor.h"
+#include <iostream>
+#include <limits>
 
 using namespace std;
-void Vendedor_menu::MenuVendedor(){
+void Vendedor_menu::MenuVendedor() {
+    while (true) {
+        cout << "BIENVENIDO AL MENU EMPLEADO" << endl;
+        cout << endl;
+        cout << "Indique la accion a realizar: " << endl;
+        cout << endl;
+        cout << "***************************" << endl;
+        cout << "1-GUARDAR CLIENTE" << endl;
+        cout << "2-BORRAR CLIENTE" << endl;
+        cout << "3-LISTAR CLIENTES" << endl;
+        cout << "4-BUSCAR CLIENTE" << endl;
+        cout << "5-CARGAR COMPRA" << endl;
+        cout << "6-VER IMPORTE COMISIONADO HASTA EL MOMENTO" << endl;
+        cout << "***************************" << endl;
+        cout << "0-SALIR" << endl;
 
-while(true){
-cout<<"BIENVENIDO AL MENU EMPLEADO"<<endl;
-cout<<endl;
-cout<<"Indique la accion a realizar: "<<endl;
-cout<<endl;
-cout<<"***************************"<<endl;
-cout<<"1-GUARDAR CLIENTE"<<endl;
-cout<<"2-BORRAR CLIENTE"<<endl;
-cout<<"3-LISTAR CLIENTES"<<endl;
-cout<<"4-BUSCAR CLIENTE"<<endl;
-cout<<"5-CARGAR COMPRA"<<endl;
-cout<<"6-VER IMPORTE COMISIONADO HASTA EL MOMENTO"<<endl;
-cout<<"***************************"<<endl;
-cout<<"0-SALIR"<<endl;
-int opcion;
-cout<<">>";
-cin>>opcion;
-system("cls");
+        int opcion;
+        cout << ">>";
+        cin >> opcion;
+        system("cls");
+
+        if (cin.fail() || opcion < 0 || opcion > 6) {
+            cin.clear();  // Clear the error flag
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Discard invalid input
+
+            cout << "Error: Opcion invalida. Ingrese un numero del 0 al 6." << endl;
+            cout<<endl;
+              system("pause");
+        system("cls");
+            continue;  // Restart the loop
+        }
 switch(opcion){
 
 case 1:{
 int legajo;
-
-    std::cout << "ESTA POR GUARDAR UN CLIENTE" << std::endl;
-    Cliente cliente; // Asegúrate de tener la clase Cliente definida
-
-    do {
-        std::cout << "Ingrese el numero de legajo del cliente: ";
-        std::cin >> legajo;
-
-        if (std::cin.fail() || legajo <= 0) {
-            std::cin.clear(); // Limpiar el indicador de error
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Descartar la entrada incorrecta
-            std::cout << "Por favor, ingrese un numero de legajo mayor a cero." << std::endl;
-        } else {
-            break; // Salir del bucle si la entrada es válida
-        }
-    } while (true);
+        cout<<"ESTA POR GUARDAR UN CLIENTE"<<endl;
+        Cliente cliente;
+        cout<<endl;
+        cout<<"Ingrese el numero de legajo del cliente: "<<endl;
+        cin>>legajo;
+        //falta validar si el legajo ya existe, si ya existe no deberia poder cargarse, en el caso de querer de que el estado este false se debe sobreescribir
         cliente.cargar(legajo);
         archivo_cliente arch("cliente.dat");
         arch.GuardarCliente(cliente);
@@ -102,7 +105,7 @@ case 2:{
                 }
         }
         cout<<endl;
-        cout<<"CLIENTE BORRADO"<<endl;
+
         cout<<endl;
         system("pause");
         system("cls");
