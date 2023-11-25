@@ -14,8 +14,10 @@ archivo_empleado arch("empleado.dat");
     cout<<endl;
     cout<<endl;
    r=arch.BuscarEmpleadoenArchivo(v);
+    Empleado empleado=arch.Leer(r);
 
-   if(r==-1){
+
+   if(r==-1 || empleado.getEstado()==false){
 
     Empleado obj;
     obj.cargar(v);//lo paso por parametro para no cargar 2 veces el id, lo mismo hice en el metodo para cargar el cliente.
@@ -23,7 +25,9 @@ archivo_empleado arch("empleado.dat");
 
     arch.GuardarEmpleado(obj);}
 
-  if(r!=-1){cout<<"EL ID QUE YA EXISTE !!"<<endl;}
+
+
+  if(r!=-1 && empleado.getEstado()==true){cout<<"EL ID QUE YA EXISTE !!"<<endl;}
 cout<<endl;
   system("pause");
     system("cls");
