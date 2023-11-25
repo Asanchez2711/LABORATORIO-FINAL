@@ -106,11 +106,17 @@ void manager_vendedor::EliminarVendedor(){
     if(posicion>=0){
         Empleado reg = arch.Leer(posicion);
 
-        cout<<"VENDEDOR A ELIMINAR: "<<endl;
+       cout<<"VENDEDOR A ELIMINAR: "<<endl;
         MostrarVendedor(reg);
-        cout<<"¿ESTA SEGURO QUE DESEA ELIMINAR EL VENDEDOR? S/N: ";
+        cout<<"Â¿ESTA SEGURO QUE DESEA ELIMINAR EL VENDEDOR? S/N: ";
         char r;
         cin>>r;
+        while(r!='s' || r!='S' || r!='n' || r!='N')
+        if(r!='s' || r!='S' || r!='n' || r!='N'){
+            cout<<"Solo se acepta 'S' o 'R'!!"<<endl;
+            cout<<"Â¿ESTA SEGURO QUE DESEA ELIMINAR EL VENDEDOR? S/N: ";
+            cin>>r;
+        }
         if(toupper(r) == 'S'){
                 reg.setEstado(false);
             reg.SetEliminado(true);
@@ -126,7 +132,7 @@ void manager_vendedor::EliminarVendedor(){
 
     }
     else{
-        cout<<"¡¡ REGISTRO: "<<legajo<<" NO EXISTE, NO ES POSIBLE ELIMINAR !!"<<endl;
+        cout<<"Â¡Â¡ REGISTRO: "<<legajo<<" NO EXISTE, NO ES POSIBLE ELIMINAR !!"<<endl;
     }
 }
 
@@ -154,7 +160,7 @@ void manager_vendedor::BuscarVendedor(){
         reg.mostrar();
     }
     else{
-    cout<<"¡¡ LEGAJO NO SE ENCUENTRA EN LOS ARCHIVOS !! "<<endl;
+    cout<<"Â¡Â¡ LEGAJO NO SE ENCUENTRA EN LOS ARCHIVOS !! "<<endl;
     }
 }
 
@@ -324,7 +330,7 @@ while (clte == -1) {
          int c= prod.getCantidad()-cantidad;
          prod.setCantidad(c);
          archpro.ModificarProducto(prod,pos);
-         cout<<"¿Desea ingresar otro producto? si/no"<<endl;
+         cout<<"Â¿Desea ingresar otro producto? si/no"<<endl;
          cin.ignore();
           cin>>resp;
          while (resp!="si"&&resp!="no")
@@ -332,7 +338,7 @@ while (clte == -1) {
 
 
              cout<<"Ha ingresado un parametro invalido. Por favor, ingrese si o no"<<endl;
-             cout<<"¿Desea ingresar otro producto? si/no"<<endl;
+             cout<<"Â¿Desea ingresar otro producto? si/no"<<endl;
 
          if (resp=="no")
          {
@@ -371,11 +377,11 @@ void manager_vendedor::buscarCliente() {
             std::cout << "Por favor, ingrese un numero valido." << std::endl;
         } else if (cliente == 0) {
 
-            return; // Salir de la función si el usuario cancela
+            return; // Salir de la funciÃ³n si el usuario cancela
         } else if (cliente < 0) {
-            std::cout << "Por favor, ingrese un número mayor o igual a cero." << std::endl;
+            std::cout << "Por favor, ingrese un nÃºmero mayor o igual a cero." << std::endl;
         } else {
-            entradaValida = true; // La entrada es válida, salir del bucle
+            entradaValida = true; // La entrada es vÃ¡lida, salir del bucle
         }
     } while (!entradaValida);
 
