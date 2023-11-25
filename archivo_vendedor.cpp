@@ -118,7 +118,7 @@ int archivo_empleado::BuscarEmpleadoenArchivo(int codigo){
     }
     while(fread(&reg, sizeof(Empleado), 1, p)==1)
     {
-        if(reg.getLegajo()==codigo){
+        if(reg.getLegajo()==codigo && reg.getEstado()==true){
             fclose(p);
             return i;
         }
