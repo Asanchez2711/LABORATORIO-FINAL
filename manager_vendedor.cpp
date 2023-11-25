@@ -171,7 +171,8 @@ void manager_vendedor::BuscarVendedor(){
  void manager_vendedor::CargarVenta()
  {
 
-     Venta venta;
+
+    Venta venta;
     archivo_venta archventa;
     Producto prod;
     archivo_producto archpro("producto.dat");
@@ -183,6 +184,7 @@ void manager_vendedor::BuscarVendedor(){
     int idproducto;
     int cantidad;
     int pos;
+    int clte;
     int  numerodeproductos=0;
     int cantidadproductos [100];
     float totalventa=0;
@@ -261,14 +263,14 @@ void manager_vendedor::BuscarVendedor(){
             pos=archpro.BuscarIdProducto(idproducto);
 
         }
-        int clte;
+
 
 
 
 cout<<"Ingrese el numero del  cliente: "<<endl;
 cin>>ncliente;
 clte=archivoCLiente.BuscarIdCliente(ncliente);//agregue la funcion buscar id cliente que solo necesita un int.
-
+cout<<clte<<endl;
 //  hay que armar una funcion que solo reciba un int y despues hacer las validaciones de fecha archivoCLiente.leerCliente(ncliente,objCliente);
 int aux;
 
@@ -303,6 +305,8 @@ while (clte == -1) {
     if (aux == 1) {
         objCliente.cargar(ncliente);
         archivoCLiente.GuardarCliente(objCliente);
+        clte=archivoCLiente.BuscarIdCliente(ncliente);
+
     } else if (aux == 2) {
         cout << "Ingrese el numero del cliente: " << endl;
         cin >> ncliente;
@@ -352,14 +356,17 @@ while (clte == -1) {
     }
      cout<<"Se finalizo la carga de venta"<<endl;
      venta.setcantprod(numerodeproductos);
-     int totalventaorigen = emple.getTotalVendido();
-     totalventa+=totalventaorigen;
+     int totalCliente=totalventa+objCliente.getTotalGastado();
+     int totalEmpleado=totalventa+emple.getTotalVendido();
     venta.setidproducto(cantidadproductos);
     venta.setPrecioVenta(totalventa);
-    emple.setTotalVendido(totalventa);
+    venta.setidCliente(ncliente);
+    emple.setTotalVendido(totalEmpleado);
+    objCliente.setTotalGastado(totalCliente);
     venta.setidVenta((archventa.archivoVentaContar()+1));
     archventa.GuardarVenta(venta);
     archemple.ModificarEmpleado(emple,posidemple); ///Verificar donde se rompe y se corrempe empleado al modificar pos en archivo_empleado
+    archivoCLiente.ModificarCliente(objCliente,clte);
 
 
 

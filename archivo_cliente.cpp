@@ -84,7 +84,7 @@ Cliente reg;
     }
     while(fread(&reg,sizeof reg,1,pAlu)==1){
         if(reg.getEstado()==true){
-        reg.mostrar();
+        reg.Mostrar();
 
         cout<<endl;
         }

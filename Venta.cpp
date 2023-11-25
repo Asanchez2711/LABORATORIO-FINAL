@@ -33,6 +33,10 @@ int Venta::getidvendedor() const
 {
     return _idvendedor;
 }
+int Venta::getidCliente () const
+{
+    return _idCliente;
+}
 
 void Venta::setFecha()
 {
@@ -62,6 +66,10 @@ void Venta::setidvendedor(int idvendedor)
 {
     _idvendedor=idvendedor;
 }
+void Venta::setidCliente(int idcliente)
+{
+    _idCliente=idcliente;
+}
 void Venta::mostrarVenta()
 {
 
@@ -76,6 +84,7 @@ void Venta::mostrarVenta()
         }
     }
     std::cout<<"ID Vendedor: "<<_idvendedor<<std::endl;
+     std::cout<<"ID Cliente: "<<_idCliente<<std::endl;
     std::cout<<"Total vendido: $"<<_precioVenta<<std::endl;
 
 

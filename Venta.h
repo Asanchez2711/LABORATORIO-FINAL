@@ -14,6 +14,7 @@ private:
     int _idproducto[100];
     int _cantprod;
     int _idvendedor;
+    int _idCliente;
     float _precioVenta;
     int _cantidad;
     int _idVenta;
@@ -24,13 +25,14 @@ public:
 
     Venta();
 
-
-    Fecha getFechaVenta() const;
+Fecha getFechaVenta() const;
     float getPrecioVenta() const;
     int getCantidad() const;
     int getidVenta() const;
     const int* getidproducto() const;
     int getidvendedor() const;
+    int getidCliente () const;
+
 
     void setFecha();
     void setPrecioVenta(float precioventa);
@@ -39,6 +41,7 @@ public:
     void setidproducto( int *idproducto);
     void setidvendedor(int idvendedor) ;
     void setcantprod(int cantprod);
+    void setidCliente(int idcliente);
     float calcularTotalVenta () const;
      void mostrarVenta();
 
