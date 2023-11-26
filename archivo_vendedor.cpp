@@ -78,7 +78,7 @@ Empleado reg;
         return false;
     }
     while(fread(&reg,sizeof reg,1,pAlu)==1){
-if(reg.GetEliminado()==false){
+if(reg.getEstado()==true){
         reg.mostrar();
         cout<<"************************************"<<endl;
         cout<<endl;
@@ -118,7 +118,7 @@ int archivo_empleado::BuscarEmpleadoenArchivo(int codigo){
     }
     while(fread(&reg, sizeof(Empleado), 1, p)==1)
     {
-        if(reg.getLegajo()==codigo && reg.getEstado()==true){
+        if(reg.getLegajo()==codigo){
             fclose(p);
             return i;
         }
