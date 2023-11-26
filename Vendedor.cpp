@@ -43,9 +43,18 @@ int legajo;
         cout<<endl;
         cout<<"Ingrese el numero de legajo del cliente: "<<endl;
         cin>>legajo;
+       archivo_cliente arch("cliente.dat");
+      int cont= arch.BuscarIdCliente(legajo);
+
+       if(cont<0){
         cliente.cargar(legajo);
-        archivo_cliente arch("cliente.dat");
-        arch.GuardarCliente(cliente);
+
+        arch.GuardarCliente(cliente);}
+        else{cout<<endl;cout<<"EL NUMERO DE CLIENTE CON ESE LEGAJO YA EXISTE"<<endl;
+        cout<<endl;
+
+
+        }
         system("pause");
         system("cls");
         break;
