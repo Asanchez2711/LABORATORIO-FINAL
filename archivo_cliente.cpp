@@ -40,7 +40,7 @@
         return false;
     }
     fseek(p,sizeof (reg)*pos,0);
-    bool escribio=fwrite(&reg,sizeof reg,1,p);
+    bool escribio=fwrite(&reg,sizeof (Cliente),1,p);
     fclose(p);
     return escribio;
 
@@ -82,7 +82,7 @@ Cliente reg;
     if(pAlu==NULL){
         return false;
     }
-    while(fread(&reg,sizeof reg,1,pAlu)==1){
+    while(fread(&reg,sizeof (Cliente),1,pAlu)==1){
         if(reg.getEstado()==true){
         reg.Mostrar();
 
@@ -125,7 +125,7 @@ Cliente reg;
     if(p==NULL){
         return -2;
     }
-    while(fread(&reg,sizeof reg,1,p)==1){
+    while(fread(&reg,sizeof (Cliente),1,p)==1){
         if(legajo==reg.getLegajo()){
             fclose(p);
             return pos;

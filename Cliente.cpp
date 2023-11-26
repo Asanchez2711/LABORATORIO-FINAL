@@ -10,12 +10,12 @@ using namespace std;
 
 
 
-void Cliente::setTotalGastado(int totalGastado)
+void Cliente::setTotalGastado(float totalGastado)
 {
     _totalGastado=totalGastado;
 }
 
-int Cliente::getTotalGastado() const
+float Cliente::getTotalGastado() const
 {
     return _totalGastado;
 }

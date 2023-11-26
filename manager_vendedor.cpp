@@ -269,14 +269,18 @@ void manager_vendedor::BuscarVendedor(){
 
 cout<<"Ingrese el numero del  cliente: "<<endl;
 cin>>ncliente;
-clte=archivoCLiente.BuscarIdCliente(ncliente);//agregue la funcion buscar id cliente que solo necesita un int.
+clte=archivoCLiente.BuscarIdCliente(ncliente);
 cout<<clte<<endl;
-//  hay que armar una funcion que solo reciba un int y despues hacer las validaciones de fecha archivoCLiente.leerCliente(ncliente,objCliente);
+
 int aux;
 
-//falta validar cuando si al momento de hacer la compra existia el cliente
-/// podria a
 
+/// podria a
+if (clte>=0)
+{
+    objCliente= archivoCLiente.leerCliente(clte,objCliente);
+     objCliente.Mostrar();
+}
 while (clte == -1) {
     cout << endl;
     cout << "EL CLIENTE NO EXISTE!!, DESEA CARGAR UN NUEVO CLIENTE ? " << endl;
@@ -311,6 +315,7 @@ while (clte == -1) {
         cout << "Ingrese el numero del cliente: " << endl;
         cin >> ncliente;
         clte = archivoCLiente.BuscarIdCliente(ncliente);
+        objCliente= archivoCLiente.leerCliente(clte,objCliente);
 
     }
 }
@@ -356,8 +361,8 @@ while (clte == -1) {
     }
      cout<<"Se finalizo la carga de venta"<<endl;
      venta.setcantprod(numerodeproductos);
-     int totalCliente=totalventa+objCliente.getTotalGastado();
-     int totalEmpleado=totalventa+emple.getTotalVendido();
+     float totalCliente=totalventa+objCliente.getTotalGastado();
+     float totalEmpleado=totalventa+emple.getTotalVendido();
     venta.setidproducto(cantidadproductos);
     venta.setPrecioVenta(totalventa);
     venta.setidCliente(ncliente);
@@ -366,6 +371,7 @@ while (clte == -1) {
     venta.setidVenta((archventa.archivoVentaContar()+1));
     archventa.GuardarVenta(venta);
     archemple.ModificarEmpleado(emple,posidemple); ///Verificar donde se rompe y se corrempe empleado al modificar pos en archivo_empleado
+    objCliente.Mostrar();
     archivoCLiente.ModificarCliente(objCliente,clte);
 
 

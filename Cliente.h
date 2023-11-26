@@ -12,14 +12,14 @@ using namespace std;
 class Cliente:public Persona{
 
     private:
-    int _totalGastado;
+    float _totalGastado;
     public:
 
 
 
-    void setTotalGastado(int totalGastado);
+    void setTotalGastado(float totalGastado);
 
-    int getTotalGastado() const;
+    float getTotalGastado() const;
 
 
 
