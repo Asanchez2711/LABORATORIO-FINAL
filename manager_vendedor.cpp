@@ -1,4 +1,5 @@
-
+#include <iostream>
+#include <limits>
 #include "Persona.h"
 #include "manager_vendedor.h"
 #include "archivo_cliente.h"
@@ -217,7 +218,7 @@ void manager_vendedor::BuscarVendedor(){
        cout<<"Ingrese fecha de la venta "<<endl;
        venta.setFecha();
     emple =archemple.leerEmpleado(posidemple,emple);
-    emple.mostrar();
+
     if(venta.getFechaVenta().getAnio()>emple.getFechaDeAlta().getAnio()){
             val=0;
     venta.setidvendedor(idvendedor);}
@@ -279,7 +280,7 @@ int aux;
 if (clte>=0)
 {
     objCliente= archivoCLiente.leerCliente(clte,objCliente);
-     objCliente.Mostrar();
+
 }
 while (clte == -1) {
     cout << endl;
@@ -343,21 +344,20 @@ while (clte == -1) {
          int c= prod.getCantidad()-cantidad;
          prod.setCantidad(c);
          archpro.ModificarProducto(prod,pos);
-         cout<<"¿Desea ingresar otro producto? si/no"<<endl;
-         cin.ignore();
-          cin>>resp;
-         while (resp!="si"&&resp!="no")
-         {
+        do {
+            std::cout << "¿Desea ingresar otro producto? si/no" << std::endl;
+            std::cin >> resp;
 
+            // Limpiar el buffer después de la entrada
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
-             cout<<"Ha ingresado un parametro invalido. Por favor, ingrese si o no"<<endl;
-             cout<<"¿Desea ingresar otro producto? si/no"<<endl;
-
-         if (resp=="no")
-         {
-              band=false;
-         }
-    }
+            if (resp != "si" && resp != "no") {
+                std::cout << "Ha ingresado un parametro invalido. Por favor, ingrese si o no" << std::endl;
+            }
+        } while (resp != "si" && resp != "no");
+         if (resp == "no") {
+            band = false; // Salir del bucle
+        }
     }
      cout<<"Se finalizo la carga de venta"<<endl;
      venta.setcantprod(numerodeproductos);
