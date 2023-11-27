@@ -404,12 +404,13 @@ void manager_vendedor::buscarCliente() {
 
     archivo_cliente arch("cliente.dat");
     int aux;
-    Cliente reg;
+    Cliente reg,fe;
 
     aux = arch.BuscarIdCliente(cliente);
+    fe=arch.leerCliente(cliente, reg);
 
-    if (aux >= 0) {
-        reg = arch.leerCliente(cliente, reg);
+    if (aux >= 0&&(fe.getEstado()==true)) {
+
         reg.Mostrar();
     }
     else{cout<<endl;

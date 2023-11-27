@@ -85,6 +85,7 @@ case 2:{
 
     if(cliente.getLegajo()==legajo&&(cliente.getEstado()==true)){
         cliente.mostrar();
+        cliente.setEstado(false);
         contador++;
 
 
