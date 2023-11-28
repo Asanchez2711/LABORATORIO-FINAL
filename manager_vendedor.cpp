@@ -12,6 +12,11 @@ archivo_empleado arch("empleado.dat");
     cout<<endl;
     cout<<"Ingrese el id del vendedor"<<endl;
     cin>>v;
+    while(v<0){
+        cout<<"!! EL CODIGO TIENE QUE SER MAYOR IGUAL A 0 !! "<<endl;
+        cout<<"Ingrese el id del vendedor"<<endl;
+        cin>>v;
+    }
     cout<<endl;
     cout<<endl;
    r=arch.BuscarEmpleadoenArchivo(v);
@@ -67,9 +72,10 @@ void manager_vendedor::TotalRecaudadoXVendedor(){
 
 void manager_vendedor::ModificarVendedor(){
 
+        int pos;
         int i,legajo,cantidad;
         cantidad=arch.archivoEmpleadoContar();
-        Empleado empleado;
+
 
         cout<<"Ingrese legajo de empleado a modificar"<<endl;
         cin>>legajo;
@@ -82,20 +88,20 @@ void manager_vendedor::ModificarVendedor(){
             cin>>legajo;
 
         }
-
+        pos = arch.BuscarEmpleadoenArchivo(legajo);
+        if(pos>=0){
         for(i=0;i<cantidad;i++){
-                empleado=arch.leerEmpleado(i,empleado);
-
-                if(legajo==empleado.getLegajo()){
-                    empleado.cargar(legajo);
-                    arch.ModificarEmpleado(empleado,i);
+                Empleado reg = arch.Leer(i);
+                if(reg.getLegajo() == legajo){
+                    reg.cargar(legajo);
+                    arch.ModificarEmpleado(reg,i);
                     break;
                 }
-                if(i==cantidad-1){
-
-                    cout<<" Legajo NO encontrado "<<endl;
-                }
-        }
+            }
+       }
+       else{
+        cout<<" !! LEGAJO NO ENCONTRADO EN LOS ARCHIVOS, INTENTELO NUEVAMENTE !! "<<endl;
+       }
 }
 
 void manager_vendedor::ListarVendedores(){

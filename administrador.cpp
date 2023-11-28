@@ -95,17 +95,13 @@ case 5:
 
 case 6:
     _managerVendedor.TotalRecaudadoXVendedor();
-
-
-
     system("pause");
     system("cls");
-
     break;
 
 
 case 7:
-    ///FIX
+
     _manager.ModificarProducto();
     system("pause");
     system("cls");

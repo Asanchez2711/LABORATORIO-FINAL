@@ -12,6 +12,11 @@ void ManagerProducto::Cargar(){
     while(pos>=0){
     cout<<"INGRESE CODIGO DE PRODUCTO: ";
     cin>>id;
+    while(id<0){
+      cout<<" !! INGRESE CODIGO MAYOR IGUAL A 0 !!"<<endl;
+      cout<<"INGRESE CODIGO DE PRODUCTO: ";
+      cin>>id;
+    }
     pos = arch.BuscarIdProducto(id);
     if(pos >= 0){
         cout<<" ¡¡ CODIGO DE PRODUCTO EXISTENTE, INTENTE CON OTRO !! "<<endl;
