@@ -1,4 +1,5 @@
 #include "archivo_venta.h"
+#include "archivo_vendedor.h"
 #include <iostream>
 #include <string>
 

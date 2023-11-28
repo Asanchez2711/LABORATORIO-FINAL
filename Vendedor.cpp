@@ -1,6 +1,12 @@
 #include "Vendedor.h"
+#include"manager_vendedor.h"
+
 #include <iostream>
 #include <limits>
+#include <iomanip>
+
+
+
 
 using namespace std;
 void Vendedor_menu::MenuVendedor() {
@@ -149,11 +155,62 @@ case 5:
 
 case 6:
     {
-        archivo_venta archven;
-        archven.ListarVentas();
+    archivo_empleado arch("empleado.dat");
+    Empleado empl;
 
-        break;
+    int contar = arch.archivoEmpleadoContar();
+
+    // Crear un vector para almacenar los importes comisionados
+    float vec[100];
+    int idvendedor[100];
+
+    for (int x = 0; x < contar; x++) {
+        empl = arch.Leer(x);
+
+
+        if (empl.getEstado() == true) {
+            vec[x] = empl.getTotalVendido();
+            idvendedor[x]=empl.getLegajo();
+        } else {
+            vec[x] = 0.0; // Si el empleado no está activo, establecer su importe en cero
+        }
     }
+
+
+   cout << "Importes comisionados de los empleados:" <<endl;
+
+    for (int y = 0; y < contar; y++) {
+
+        vec[y] *= 0.10;
+
+
+        //aca se deberia guardar en el archivo empleado  un registro de nuevo de empleados seteandole todos los datos
+
+        // Imprimir el importe comisionado solo si el empleado está activo
+        if (vec[y] > 0.0) {
+
+
+           cout << "Empleado " <<idvendedor[y]<< ": $"  << vec[y] << endl;
+
+
+
+            system("pause");
+    system("cls");
+        }
+    }
+    break;
+   }
+
+
+
+
+
+
+
+
+
+
+
 
 
 default:

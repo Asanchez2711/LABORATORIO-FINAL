@@ -1,4 +1,5 @@
 #include "Venta.h"
+#include "archivo_vendedor.h"
 
 
 
@@ -102,3 +103,5 @@ float Venta::calcularTotalVenta() const
 {
     return _precioVenta * _cantidad;
 }
+
+

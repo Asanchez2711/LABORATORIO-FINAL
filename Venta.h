@@ -46,5 +46,7 @@ Fecha getFechaVenta() const;
      void mostrarVenta();
 
 
+
+
 };
 #endif // VENTA_H
