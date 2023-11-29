@@ -124,7 +124,7 @@ void manager_vendedor::EliminarVendedor(){
         cin>>r;
         while(r!='s' && r!='S' && r!='n' && r!='N')
         if(r!='s' && r!='S' && r!='n' && r!='N'){
-            cout<<"Solo se acepta 'S' o 'R'!!"<<endl;
+            cout<<"Solo se acepta 'S' o 'N'!!"<<endl;
             cout<<"¿ESTA SEGURO QUE DESEA ELIMINAR EL VENDEDOR? S/N: ";
             cin>>r;
         }
