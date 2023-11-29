@@ -131,14 +131,29 @@ void ManagerProducto::EliminarArticulo(){
 void ManagerProducto::ModificarProducto(){
 
         int id, pos;
+        Producto producto;
         int cantidad = arch.archivoProductoContar();
+
+
         cout<<"INGRESE ID A MODIFICAR"<<endl;
         cin>>id;
+        while(cin.fail()){
+            if (std::cin.fail()) {
+            std::cin.clear();  // Limpiar el estado de error
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // Descartar la entrada no válida
+            std::cout << "Entrada no valida. Por favor, ingrese un numero entero.\n";
+            cin>>id;
+
+
+        }
+        }
         pos = arch.BuscarIdProducto(id);
-        if(pos>=0){
+        producto=arch.leerProducto(pos,producto);
+
+        if(pos>=0 && producto.getEstado()==true){
         for(int i=0;i<cantidad;i++){
             Producto reg = arch.LeerProductoBuscado(i);
-                if(reg.getId() == id){
+                if(reg.getId() == id && reg.getEstado()==true){
                     reg.cargar(id);
                     arch.ModificarProducto(reg,i);
 
