@@ -1,5 +1,7 @@
 #include "Vendedor.h"
 #include"manager_vendedor.h"
+#include "Venta.h"
+#include "archivo_venta.h"
 
 #include <iostream>
 #include <limits>
@@ -79,7 +81,7 @@ case 2:{
         while(cin.fail()){
             if (std::cin.fail()) {
             std::cin.clear();  // Limpiar el estado de error
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // Descartar la entrada no v·lida
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // Descartar la entrada no v√°lida
             std::cout << "Entrada no valida. Por favor, ingrese un numero entero.\n";
             cin>>legajo;
 
@@ -155,49 +157,32 @@ case 5:
 
 case 6:
     {
-    archivo_empleado arch("empleado.dat");
-    Empleado empl;
+archivo_empleado archEmpleado("empleado.dat");
 
-    int contar = arch.archivoEmpleadoContar();
+Empleado objEmpleado;
 
-    // Crear un vector para almacenar los importes comisionados
-    float vec[100];
-    int idvendedor[100];
+int idEmpl,conta,pos;
+float papa;
 
-    for (int x = 0; x < contar; x++) {
-        empl = arch.Leer(x);
+cout<<"La comision de que empleado quiere ver ? "<<endl;
+cin>>idEmpl;
 
+pos=archEmpleado.BuscarLegajoEmpleado(idEmpl,objEmpleado);
 
-        if (empl.getEstado() == true) {
-            vec[x] = empl.getTotalVendido();
-            idvendedor[x]=empl.getLegajo();
-        } else {
-            vec[x] = 0.0; // Si el empleado no est· activo, establecer su importe en cero
-        }
-    }
+if(pos>=0){
+  objEmpleado =archEmpleado.Leer(pos);
+  papa=objEmpleado.getTotalVendido()*0.10;
 
-
-   cout << "Importes comisionados de los empleados:" <<endl;
-
-    for (int y = 0; y < contar; y++) {
-
-        vec[y] *= 0.10;
-
-
-        //aca se deberia guardar en el archivo empleado  un registro de nuevo de empleados seteandole todos los datos
-
-        // Imprimir el importe comisionado solo si el empleado est· activo
-        if (vec[y] > 0.0) {
-
-
-           cout << "Empleado " <<idvendedor[y]<< ": $"  << vec[y] << endl;
+}
 
 
 
-            system("pause");
-    system("cls");
-        }
-    }
+        cout<<endl;
+        cout<<"ESTE ES EL IMPORTE COMISIONADO HASTA EL MOMENTO POR CADA VENDEDOR: "<<papa<<endl;
+        cout<<endl;
+
+
+
     break;
    }
 
