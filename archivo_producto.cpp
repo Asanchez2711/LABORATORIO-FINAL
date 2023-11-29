@@ -85,7 +85,7 @@ Producto reg;
         return false;
     }
     while(fread(&reg,sizeof reg,1,pAlu)==1){
-            if(reg.getEstado()!=true){
+            if(reg.getEstado()==true){
         reg.mostrar();
         cout<<endl;}
     }
@@ -95,7 +95,7 @@ Producto reg;
  }
 
 
- int archivo_producto::BuscarIdProducto(int id){
+int archivo_producto::BuscarIdProducto(int id){
 Producto reg;
 
     FILE *p;
@@ -105,7 +105,7 @@ Producto reg;
         return -2;
     }
     while(fread(&reg,sizeof reg,1,p)==1){
-        if(id==reg.getId()){
+        if(id==reg.getId() && reg.getEstado()==true){
             fclose(p);
             return pos;
         }
