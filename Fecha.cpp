@@ -172,48 +172,37 @@ void Fecha::cargar()
 
     cout<<"Ingrese dia: "<<endl;
     cin>>dia;
-    while (cin.fail())
-        {
-
-            /*
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(),'\n');
-            cout<<"Valor invalido, ingrese solo numeros"<<endl;
-            cout<<"Ingrese nuevamente el valor"<<endl;
-            */
-
-            //validarNumeros();
+    while(cin.fail()){
+            if (std::cin.fail()) {
+            std::cin.clear();  // Limpiar el estado de error
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // Descartar la entrada no válida
+            std::cout << "Entrada no valida. Por favor, ingrese un numero entero.\n";
             cin>>dia;
 
-        }
+
+        }}
     cout<<"Ingrese mes: "<<endl;
     cin>>mes;
-    while (cin.fail())
-        {
-            /*
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(),'\n');
-            cout<<"Valor invalido, ingrese solo numeros"<<endl;
-            cout<<"Ingrese nuevamente el valor"<<endl;*/
-
-            //validarNumeros();
+    while(cin.fail()){
+            if (std::cin.fail()) {
+            std::cin.clear();  // Limpiar el estado de error
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // Descartar la entrada no válida
+            std::cout << "Entrada no valida. Por favor, ingrese un numero entero.\n";
             cin>>mes;
 
-        }
+
+        }}
     cout<<"Ingrese anio: "<<endl;
     cin>>anio;
-    while (cin.fail())
-        {
-            /*
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(),'\n');
-            cout<<"Valor invalido, ingrese solo numeros"<<endl;
-            cout<<"Ingrese nuevamente el valor"<<endl;*/
-
-            //validarNumeros();
+    while(cin.fail()){
+            if (std::cin.fail()) {
+            std::cin.clear();  // Limpiar el estado de error
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // Descartar la entrada no válida
+            std::cout << "Entrada no valida. Por favor, ingrese un numero entero.\n";
             cin>>anio;
 
-        }
+
+        }}
 
     if(dia<1 || dia>31){
         _dia=1;
@@ -235,7 +224,13 @@ void Fecha::cargar()
         _dia=1;
         _mes=1;
         _anio=0;
-    } else {
+    } else if(anio<1990 || anio>2100){
+        _dia=1;
+        _mes=1;
+        _anio=0;
+
+    }
+    else {
         _dia=dia;
         _mes=mes;
         _anio=anio;
