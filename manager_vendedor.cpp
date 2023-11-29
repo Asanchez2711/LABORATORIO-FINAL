@@ -12,11 +12,27 @@ archivo_empleado arch("empleado.dat");
     cout<<endl;
     cout<<"Ingrese el id del vendedor"<<endl;
     cin>>v;
-    while(v<0){
+    while(cin.fail() || v<0){
+            if (std::cin.fail()) {
+            std::cin.clear();  // Limpiar el estado de error
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // Descartar la entrada no válida
+            std::cout << "Entrada no valida. Por favor, ingrese un numero entero.\n";
+            cin>>v;
+            }
+            else {
+                cout<<"!! EL CODIGO TIENE QUE SER MAYOR IGUAL A 0 !! "<<endl;
+                cout<<"Ingrese el id del vendedor"<<endl;
+                cin>>v;
+            }
+
+
+        }
+    /*while(v<0){
         cout<<"!! EL CODIGO TIENE QUE SER MAYOR IGUAL A 0 !! "<<endl;
-        cout<<"Ingrese el id del vendedor"<<endl;
-        cin>>v;
+                cout<<"Ingrese el id del vendedor"<<endl;
+                cin>>v;
     }
+    */
     cout<<endl;
     cout<<endl;
    r=arch.BuscarEmpleadoenArchivo(v);
