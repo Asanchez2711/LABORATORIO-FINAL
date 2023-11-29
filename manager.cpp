@@ -9,7 +9,7 @@ void ManagerProducto::Cargar(){
     Producto reg;
     int pos=0, id;
 
-    while(pos>=0){
+
     cout<<"INGRESE CODIGO DE PRODUCTO: ";
     cin>>id;
     while(id<0){
@@ -18,14 +18,16 @@ void ManagerProducto::Cargar(){
       cin>>id;
     }
     pos = arch.BuscarIdProducto(id);
-    if(pos >= 0){
+    reg = arch.leerProducto(pos,reg);
+    if(pos >= 0 && reg.getEstado()==true){
         cout<<" ¡¡ CODIGO DE PRODUCTO EXISTENTE, INTENTE CON OTRO !! "<<endl;
         system("pause");
         system("cls");
     }
-    }
-    if(pos<0){
+
+    if(pos<0 || reg.getEstado()==false){
     reg.cargar(id);
+    reg.set_estado(true);
     bool ok = arch.GuardarProducto(reg);
     if(ok){
         cout<<"**EL PRODUCTO SE GUARDO CORRECTAMENTE**"<<endl;
@@ -76,7 +78,7 @@ cant = arch.archivoProductoContar();
     cout<<"**************************"<<endl;
 for(int i=0;i<cant;i++){
     Producto reg = arch.LeerProductoBuscado(i);
-    if(reg.getEstado() == false){
+    if(reg.getEstado() == true){
     MostrarRegistro(reg);
     cout<<"**************************"<<endl;
     }
@@ -111,11 +113,11 @@ void ManagerProducto::EliminarArticulo(){
         int pos = arch.BuscarIdProducto(id);
         producto=arch.leerProducto(pos,producto);
 
-        if(pos >= 0 && producto.getEstado()==false){
+        if(pos >= 0 && producto.getEstado()==true){
         for(int i=0;i<cantidad;i++){
             Producto reg = arch.LeerProductoBuscado(i);
-            if(id == reg.getId() && reg.getEstado()==false){
-                reg.set_estado(true);
+            if(id == reg.getId() && reg.getEstado()==true){
+                reg.set_estado(false);
                 arch.ModificarProducto(reg, i);
                 cout<<"**PRODUCTO ELIMINADO CORRECTAMENTE**"<<endl;
                 }
