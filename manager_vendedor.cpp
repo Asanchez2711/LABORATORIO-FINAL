@@ -423,7 +423,14 @@ while (clte == -1) {
     venta.setidCliente(ncliente);
     emple.setTotalVendido(totalEmpleado);
     objCliente.setTotalGastado(totalCliente);
-    venta.setidVenta((archventa.archivoVentaContar()+1));
+    if (archventa.archivoVentaContar()<=0)
+    { int i=1;
+        venta.setidVenta(i);
+    }else
+    {
+      venta.setidVenta((archventa.archivoVentaContar()+1));
+    }
+
     archventa.GuardarVenta(venta);
     archemple.ModificarEmpleado(emple,posidemple); ///Verificar donde se rompe y se corrempe empleado al modificar pos en archivo_empleado
     objCliente.Mostrar();

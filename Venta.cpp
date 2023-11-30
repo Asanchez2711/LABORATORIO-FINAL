@@ -84,6 +84,7 @@ void Venta::mostrarVenta()
             std::cout << _idproducto[i]<< " ";
         }
     }
+    std::cout<<std::endl;
     std::cout<<"ID Vendedor: "<<_idvendedor<<std::endl;
      std::cout<<"ID Cliente: "<<_idCliente<<std::endl;
     std::cout<<"Total vendido: $"<<_precioVenta<<std::endl;
