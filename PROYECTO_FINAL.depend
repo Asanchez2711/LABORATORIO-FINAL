@@ -487,7 +487,7 @@
 	"Empleado.h"
 	"Fecha.h"
 
-1701370570 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\venta.cpp
+1701352610 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\venta.cpp
 	"Venta.h"
 	"archivo_vendedor.h"
 
@@ -1022,6 +1022,352 @@
 	<iomanip>
 
 1701133265 source:c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final-main\venta.cpp
+	"Venta.h"
+	"archivo_vendedor.h"
+
+1701370509 source:c:\users\alejandro\desktop\proyecto_final\fix\laboratorio-final\administrador.cpp
+	<iostream>
+	"administrador.h"
+
+1701369098 c:\users\alejandro\desktop\proyecto_final\fix\laboratorio-final\administrador.h
+	<iostream>
+	<cstdio>
+	<cstring>
+	"manager.h"
+	"manager_vendedor.h"
+
+1701369098 c:\users\alejandro\desktop\proyecto_final\fix\laboratorio-final\manager.h
+	<iostream>
+	<cstdio>
+	<limits>
+	<cstring>
+	"archivo_producto.h"
+	"producto.h"
+
+1701369098 c:\users\alejandro\desktop\proyecto_final\fix\laboratorio-final\archivo_producto.h
+	<iostream>
+	<cstdio>
+	<cstring>
+	"Producto.h"
+
+1701369098 c:\users\alejandro\desktop\proyecto_final\fix\laboratorio-final\producto.h
+	<iostream>
+	<cstdio>
+	<cstring>
+	"Fecha.h"
+
+1701369098 c:\users\alejandro\desktop\proyecto_final\fix\laboratorio-final\fecha.h
+	<iostream>
+	<string.h>
+
+1701369098 c:\users\alejandro\desktop\proyecto_final\fix\laboratorio-final\manager_vendedor.h
+	<iostream>
+	<cstdio>
+	"archivo_vendedor.h"
+	"empleado.h"
+	"Persona.h"
+	"Fecha.h"
+	"producto.h"
+	"Venta.h"
+	"archivo_venta.h"
+	"archivo_producto.h"
+
+1701369098 c:\users\alejandro\desktop\proyecto_final\fix\laboratorio-final\archivo_vendedor.h
+	<iostream>
+	<string>
+	<cstdio>
+	"Persona.h"
+	"empleado.h"
+
+1701369098 c:\users\alejandro\desktop\proyecto_final\fix\laboratorio-final\persona.h
+	<iostream>
+	<string>
+	<limits>
+	"Fecha.h"
+
+1701369098 c:\users\alejandro\desktop\proyecto_final\fix\laboratorio-final\empleado.h
+	<iostream>
+	<string>
+	<cstdio>
+	"Fecha.h"
+	"Persona.h"
+
+1701369098 c:\users\alejandro\desktop\proyecto_final\fix\laboratorio-final\venta.h
+	<iostream>
+	"Producto.h"
+	"Empleado.h"
+	"Fecha.h"
+
+1701369098 c:\users\alejandro\desktop\proyecto_final\fix\laboratorio-final\archivo_venta.h
+	"Venta.h"
+
+1701369098 source:c:\users\alejandro\desktop\proyecto_final\fix\laboratorio-final\aplicacion.cpp
+	<iostream>
+	<limits>
+	"aplicacion.h"
+
+1701369098 c:\users\alejandro\desktop\proyecto_final\fix\laboratorio-final\aplicacion.h
+	<iostream>
+	<cstdio>
+	"administrador.h"
+	"Vendedor.h"
+	"manager.h"
+
+1701369098 c:\users\alejandro\desktop\proyecto_final\fix\laboratorio-final\vendedor.h
+	<iostream>
+	<cstdio>
+	"Cliente.h"
+	"archivo_cliente.h"
+	"manager_vendedor.h"
+
+1701369098 c:\users\alejandro\desktop\proyecto_final\fix\laboratorio-final\cliente.h
+	<iostream>
+	<string>
+	"Fecha.h"
+	"Persona.h"
+
+1701369098 c:\users\alejandro\desktop\proyecto_final\fix\laboratorio-final\archivo_cliente.h
+	<iostream>
+	<string>
+	"Cliente.h"
+
+1701369098 source:c:\users\alejandro\desktop\proyecto_final\fix\laboratorio-final\archivo_cliente.cpp
+	"archivo_cliente.h"
+	<iostream>
+	<string>
+
+1701369098 source:c:\users\alejandro\desktop\proyecto_final\fix\laboratorio-final\archivo_producto.cpp
+	<iostream>
+	<string>
+	<vector>
+	"archivo_producto.h"
+
+1701369098 source:c:\users\alejandro\desktop\proyecto_final\fix\laboratorio-final\archivo_vendedor.cpp
+	"archivo_vendedor.h"
+	"empleado.h"
+
+1701369098 source:c:\users\alejandro\desktop\proyecto_final\fix\laboratorio-final\archivo_venta.cpp
+	"archivo_venta.h"
+	"archivo_vendedor.h"
+	<iostream>
+	<string>
+
+1701369098 source:c:\users\alejandro\desktop\proyecto_final\fix\laboratorio-final\cliente.cpp
+	"Cliente.h"
+	<iostream>
+	<string>
+	"Fecha.h"
+
+1701369098 source:c:\users\alejandro\desktop\proyecto_final\fix\laboratorio-final\empleado.cpp
+	"Empleado.h"
+	"Fecha.h"
+
+1701369098 source:c:\users\alejandro\desktop\proyecto_final\fix\laboratorio-final\fecha.cpp
+	<limits>
+	"Fecha.h"
+
+1701369098 source:c:\users\alejandro\desktop\proyecto_final\fix\laboratorio-final\main.cpp
+	<iostream>
+	<cstdio>
+	"aplicacion.h"
+
+1701370561 source:c:\users\alejandro\desktop\proyecto_final\fix\laboratorio-final\manager.cpp
+	<iostream>
+	"Fecha.h"
+	"manager.h"
+
+1701371063 source:c:\users\alejandro\desktop\proyecto_final\fix\laboratorio-final\manager_vendedor.cpp
+	<iostream>
+	<limits>
+	"Persona.h"
+	"manager_vendedor.h"
+	"archivo_cliente.h"
+
+1701369098 source:c:\users\alejandro\desktop\proyecto_final\fix\laboratorio-final\persona.cpp
+	"Persona.h"
+	<cctype>
+
+1701369098 source:c:\users\alejandro\desktop\proyecto_final\fix\laboratorio-final\producto.cpp
+	"Producto.h"
+	<string>
+	<limits>
+
+1701369098 source:c:\users\alejandro\desktop\proyecto_final\fix\laboratorio-final\vendedor.cpp
+	"Vendedor.h"
+	"manager_vendedor.h"
+	"Venta.h"
+	"archivo_venta.h"
+	<iostream>
+	<limits>
+	<iomanip>
+
+1701369098 source:c:\users\alejandro\desktop\proyecto_final\fix\laboratorio-final\venta.cpp
+	"Venta.h"
+	"archivo_vendedor.h"
+
+1701370509 source:c:\users\alejandro\desktop\proyecto_final\laboratorio-final\administrador.cpp
+	<iostream>
+	"administrador.h"
+
+1701369098 c:\users\alejandro\desktop\proyecto_final\laboratorio-final\administrador.h
+	<iostream>
+	<cstdio>
+	<cstring>
+	"manager.h"
+	"manager_vendedor.h"
+
+1701369098 c:\users\alejandro\desktop\proyecto_final\laboratorio-final\manager.h
+	<iostream>
+	<cstdio>
+	<limits>
+	<cstring>
+	"archivo_producto.h"
+	"producto.h"
+
+1701369098 c:\users\alejandro\desktop\proyecto_final\laboratorio-final\archivo_producto.h
+	<iostream>
+	<cstdio>
+	<cstring>
+	"Producto.h"
+
+1701369098 c:\users\alejandro\desktop\proyecto_final\laboratorio-final\producto.h
+	<iostream>
+	<cstdio>
+	<cstring>
+	"Fecha.h"
+
+1701369098 c:\users\alejandro\desktop\proyecto_final\laboratorio-final\fecha.h
+	<iostream>
+	<string.h>
+
+1701369098 c:\users\alejandro\desktop\proyecto_final\laboratorio-final\manager_vendedor.h
+	<iostream>
+	<cstdio>
+	"archivo_vendedor.h"
+	"empleado.h"
+	"Persona.h"
+	"Fecha.h"
+	"producto.h"
+	"Venta.h"
+	"archivo_venta.h"
+	"archivo_producto.h"
+
+1701369098 c:\users\alejandro\desktop\proyecto_final\laboratorio-final\archivo_vendedor.h
+	<iostream>
+	<string>
+	<cstdio>
+	"Persona.h"
+	"empleado.h"
+
+1701369098 c:\users\alejandro\desktop\proyecto_final\laboratorio-final\persona.h
+	<iostream>
+	<string>
+	<limits>
+	"Fecha.h"
+
+1701369098 c:\users\alejandro\desktop\proyecto_final\laboratorio-final\empleado.h
+	<iostream>
+	<string>
+	<cstdio>
+	"Fecha.h"
+	"Persona.h"
+
+1701369098 c:\users\alejandro\desktop\proyecto_final\laboratorio-final\venta.h
+	<iostream>
+	"Producto.h"
+	"Empleado.h"
+	"Fecha.h"
+
+1701369098 c:\users\alejandro\desktop\proyecto_final\laboratorio-final\archivo_venta.h
+	"Venta.h"
+
+1701369098 source:c:\users\alejandro\desktop\proyecto_final\laboratorio-final\aplicacion.cpp
+	<iostream>
+	<limits>
+	"aplicacion.h"
+
+1701369098 c:\users\alejandro\desktop\proyecto_final\laboratorio-final\aplicacion.h
+	<iostream>
+	<cstdio>
+	"administrador.h"
+	"Vendedor.h"
+	"manager.h"
+
+1701369098 c:\users\alejandro\desktop\proyecto_final\laboratorio-final\vendedor.h
+	<iostream>
+	<cstdio>
+	"Cliente.h"
+	"archivo_cliente.h"
+	"manager_vendedor.h"
+
+1701369098 c:\users\alejandro\desktop\proyecto_final\laboratorio-final\cliente.h
+	<iostream>
+	<string>
+	"Fecha.h"
+	"Persona.h"
+
+1701369098 c:\users\alejandro\desktop\proyecto_final\laboratorio-final\archivo_cliente.h
+	<iostream>
+	<string>
+	"Cliente.h"
+
+1701369098 source:c:\users\alejandro\desktop\proyecto_final\laboratorio-final\archivo_cliente.cpp
+	"archivo_cliente.h"
+	<iostream>
+	<string>
+
+1701369098 source:c:\users\alejandro\desktop\proyecto_final\laboratorio-final\archivo_producto.cpp
+	<iostream>
+	<string>
+	<vector>
+	"archivo_producto.h"
+
+1701369098 source:c:\users\alejandro\desktop\proyecto_final\laboratorio-final\archivo_vendedor.cpp
+	"archivo_vendedor.h"
+	"empleado.h"
+
+1701369098 source:c:\users\alejandro\desktop\proyecto_final\laboratorio-final\archivo_venta.cpp
+	"archivo_venta.h"
+	"archivo_vendedor.h"
+	<iostream>
+	<string>
+
+1701369098 source:c:\users\alejandro\desktop\proyecto_final\laboratorio-final\cliente.cpp
+	"Cliente.h"
+	<iostream>
+	<string>
+	"Fecha.h"
+
+1701369098 source:c:\users\alejandro\desktop\proyecto_final\laboratorio-final\empleado.cpp
+	"Empleado.h"
+	"Fecha.h"
+
+1701369098 source:c:\users\alejandro\desktop\proyecto_final\laboratorio-final\fecha.cpp
+	<limits>
+	"Fecha.h"
+
+1701369098 source:c:\users\alejandro\desktop\proyecto_final\laboratorio-final\main.cpp
+	<iostream>
+	<cstdio>
+	"aplicacion.h"
+
+1701372333 source:c:\users\alejandro\desktop\proyecto_final\laboratorio-final\manager_vendedor.cpp
+	<iostream>
+	<limits>
+	"Persona.h"
+	"manager_vendedor.h"
+	"archivo_cliente.h"
+
+1701369098 source:c:\users\alejandro\desktop\proyecto_final\laboratorio-final\persona.cpp
+	"Persona.h"
+	<cctype>
+
+1701369098 source:c:\users\alejandro\desktop\proyecto_final\laboratorio-final\producto.cpp
+	"Producto.h"
+	<string>
+	<limits>
+
+1701372333 source:c:\users\alejandro\desktop\proyecto_final\laboratorio-final\venta.cpp
 	"Venta.h"
 	"archivo_vendedor.h"
 

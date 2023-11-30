@@ -4,6 +4,17 @@ using namespace std;
 #include "Fecha.h"
 #include "manager.h"
 
+int VerificarCaracteres(){
+    int numero;
+    while (!(std::cin >> numero)) {
+        std::cin.clear();  // Limpiar el estado de error
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // Descartar la entrada no válida
+        std::cout << "Entrada no valida. Por favor, ingrese un numero entero: ";
+    }
+    system("cls");
+    return numero;
+}
+
 void ManagerProducto::Cargar(){
 
     Producto reg;
@@ -16,9 +27,9 @@ void ManagerProducto::Cargar(){
 
     while (esNumero(ids))
     {
-         cout<<"EL VALOR INGRESADO ES INVALIDO"<<endl;
-         cout<<"INGRESE UN NUMERO"<<endl;
-         cin>>ids;
+      cout<<"EL VALOR INGRESADO ES INVALIDO"<<endl;
+      cout<<"INGRESE UN NUMERO"<<endl;
+      cin>>ids;
     }
 
     id=stoi(ids);
@@ -54,7 +65,8 @@ void ManagerProducto::BuscarXID(){
 int ID, pos;
 
 cout<<"INGRESE CODIGO A BUSCAR: ";
-cin>>ID;
+
+    ID = VerificarCaracteres();
 
 pos = arch.BuscarIdProducto(ID);
 
@@ -95,44 +107,39 @@ for(int i=0;i<cant;i++){
     }
   }
 }
-/// HAY QUE ARMARLO BIEN CUANDO SE TENGA LA CLASE VENTAS 13/11
-/*
-void ManagerProducto::ListarRecaudado(){
-
-    int cant;
-    float Total=0;
-    cant = arch.archivoProductoContar();
-    for(int i=0;i<cant;i++){
-        Producto reg = arch.LeerProductoBuscado(i);
-        Total+=reg.getPrecio();
-    }
-    cout<<"******************"<<endl;
-    cout<<"TOTAL RECAUDADO: $"<<Total<<endl;
-    cout<<"******************"<<endl;
-}
-*/
 
 void ManagerProducto::EliminarArticulo(){
 
         int id;
 
         Producto producto;
-        int cantidad=arch.archivoProductoContar();
 
         cout<<"INGRESE CODIGO DE PRODUCTO A ELIMINAR: "<<endl;
-        cin>>id;
+        id = VerificarCaracteres();
         int pos = arch.BuscarIdProducto(id);
-        producto=arch.leerProducto(pos,producto);
 
-        if(pos >= 0 && producto.getEstado()==true){
-        for(int i=0;i<cantidad;i++){
-            Producto reg = arch.LeerProductoBuscado(i);
-            if(id == reg.getId() && reg.getEstado()==true){
+        if(pos >= 0){
+            Producto reg = arch.LeerProductoBuscado(pos);
+            cout<<"PRODUCTO A ELIMINAR: ";
+            MostrarRegistro(reg);
+            cout<<"ESTA SEGURO QUE DESEA ELIMINAR PRODUCTO? S/N";
+            char r;
+            cin>>r;
+            while(r!='s' && r!='S' && r!='n' && r!='N')
+            if(r!='s' && r!='S' && r!='n' && r!='N'){
+            cout<<"Solo se acepta 'S' o 'N'!!"<<endl;
+            cout<<"¿ESTA SEGURO QUE DESEA ELIMINAR EL VENDEDOR? S/N: ";
+            cin>>r;
+            }
+
+            if(toupper(r) == 'S'){
                 reg.set_estado(false);
-                arch.ModificarProducto(reg, i);
+                arch.ModificarProducto(reg, pos);
                 cout<<"**PRODUCTO ELIMINADO CORRECTAMENTE**"<<endl;
                 }
-            }
+           else{
+            cout<<"!! OPERACION CANCELADA !! "<<endl;
+           }
         }
         else{
             cout<<"¡¡ PRODUCTO NO ENCONTRADO EN LOS ARCHIVOS !!"<<endl;

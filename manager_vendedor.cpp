@@ -4,6 +4,17 @@
 #include "manager_vendedor.h"
 #include "archivo_cliente.h"
 
+int VerificaLetras(){
+    int numero;
+    while (!(std::cin >> numero)) {
+        std::cin.clear();  // Limpiar el estado de error
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // Descartar la entrada no válida
+        std::cout << "Entrada no valida. Por favor, ingrese un numero entero: ";
+    }
+    system("cls");
+    return numero;
+}
+
 void manager_vendedor::CargarVendedor(){
 
 int v,r;
@@ -80,7 +91,6 @@ void manager_vendedor::TotalRecaudadoXVendedor(){
         }
 }
 
-
 void manager_vendedor::ModificarVendedor(){
 
         int pos;
@@ -126,7 +136,7 @@ void manager_vendedor::EliminarVendedor(){
     int legajo, posicion;
 
     cout<<"INGRESE LEGAJO DE VENDEDOR A ELIMINAR: ";
-    cin>>legajo;
+    legajo = VerificaLetras();
     posicion=arch.BuscarEmpleadoenArchivo(legajo);
     if(posicion>=0){
         Empleado reg = arch.Leer(posicion);
@@ -143,7 +153,7 @@ void manager_vendedor::EliminarVendedor(){
             cin>>r;
         }
         if(toupper(r) == 'S'){
-                reg.setEstado(false);
+            reg.setEstado(false);
             reg.SetEliminado(true);
             arch.BorrarEmpleado(reg, posicion);
             cout<<endl;
@@ -175,10 +185,9 @@ void manager_vendedor::BuscarVendedor(){
     int legajo;
     Empleado empleado;
 
-
     cout<<"INGRESE LEGAJO A BUSCAR :";
-    cin>>legajo;
 
+    legajo = VerificaLetras();
 
     pos = arch.BuscarEmpleadoenArchivo(legajo);
     empleado = arch.leerEmpleado(pos,empleado);
@@ -376,12 +385,6 @@ while (clte == -1) {
     }
 }
 
-
-
-
-
-
-
         cantidadproductos[numerodeproductos]=idproducto;
         numerodeproductos++;
 
@@ -423,14 +426,7 @@ while (clte == -1) {
     venta.setidCliente(ncliente);
     emple.setTotalVendido(totalEmpleado);
     objCliente.setTotalGastado(totalCliente);
-    if (archventa.archivoVentaContar()<=0)
-    { int i=1;
-        venta.setidVenta(i);
-    }else
-    {
-      venta.setidVenta((archventa.archivoVentaContar()+1));
-    }
-
+    venta.setidVenta((archventa.archivoVentaContar()+1));
     archventa.GuardarVenta(venta);
     archemple.ModificarEmpleado(emple,posidemple); ///Verificar donde se rompe y se corrempe empleado al modificar pos en archivo_empleado
     objCliente.Mostrar();

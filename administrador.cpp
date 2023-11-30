@@ -28,6 +28,7 @@ int VerificaNumero(){
       }
 }
 
+
 void Admin::MenuAdmin(){
 
 while(true){
