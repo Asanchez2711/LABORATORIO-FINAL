@@ -76,7 +76,7 @@ cout<<"PROVEEDOR: "<<reg.getProveedor()<<endl;
 cout<<"TEMPORADA: "<<reg.getTemporada()<<endl;
 ///FIX
 //  cout<<"FECHA DE ALTA: "<<f.toString()<<endl;
-cout<<"ELIMINADO: "<<(reg.getEstado()?"SI":"NO")<<endl;
+cout<<"ELIMINADO: "<<(reg.getEstado()?"NO":"SI")<<endl;
 
 
 }
