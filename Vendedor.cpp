@@ -141,6 +141,8 @@ case 4:{
 
     manager_vendedor v;
     v.buscarCliente();
+    system("pause");
+    system("cls");
     break;
 }
 
