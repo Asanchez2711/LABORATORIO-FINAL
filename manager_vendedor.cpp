@@ -402,36 +402,36 @@ while (clte == -1) {
 
 
 void manager_vendedor::buscarCliente() {
-    int cliente;
+    int ID;
     bool entradaValida = false;
 
     do {
         std::cout << "Ingrese el cliente a buscar (o ingrese 0 para cancelar): ";
-        std::cin >> cliente;
+        std::cin >> ID;
 
         if (std::cin.fail()) {
             std::cin.clear(); // Limpiar el indicador de error
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Descartar la entrada incorrecta
             std::cout << "Por favor, ingrese un numero valido." << std::endl;
-        } else if (cliente == 0) {
+        } else if (ID == 0) {
 
             return; // Salir de la función si el usuario cancela
-        } else if (cliente < 0) {
+        } else if (ID < 0) {
             std::cout << "Por favor, ingrese un número mayor o igual a cero." << std::endl;
         } else {
             entradaValida = true; // La entrada es válida, salir del bucle
         }
     } while (!entradaValida);
 
-    archivo_cliente arch("cliente.dat");
-    int aux;
-    Cliente reg,fe;
+    archivo_cliente archi("cliente.dat");
+    int pos;
+    Cliente reg;
 
-    aux = arch.BuscarIdCliente(cliente);
-    fe=arch.leerCliente(aux, reg);
+    pos = archi.BuscarIdCliente(ID);
+    reg = archi.leerCliente(pos, reg);
 
-    if (aux >= 0 && fe.getEstado()==true) {
-
+    if (pos >= 0 && reg.getEstado()==true) {
+        reg = archi.Leer(pos);
         reg.mostrar();
     }
     else{cout<<endl;
