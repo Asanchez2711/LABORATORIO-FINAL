@@ -201,6 +201,7 @@ void manager_vendedor::BuscarVendedor(){
     int cantprod = archpro.archivoProductoContar();
     Empleado emple;
     archivo_empleado archemple ("empleado.dat");
+    string idvendedors, idproductos,cantidads,nclientes;
     int cantemple = archemple.archivoEmpleadoContar();
     int idvendedor;
     int idproducto;
@@ -220,7 +221,14 @@ void manager_vendedor::BuscarVendedor(){
 
     while(val==1){
     cout<<"Ingrese ID vendedor"<<endl;
-    cin>>idvendedor;
+    cin>>idvendedors;
+    while (esNumero(idvendedors))
+    {
+        cout<<"HA INGRESADO UN PARAMETRO INVALDO"<<endl;
+        cout<<"INGRESE UN VALOR NUMERICO MAYOR A 0"<<endl;
+        cin>>idvendedors;
+    }
+    idvendedor=stoi(idvendedors);
    int posidemple= archemple.BuscarLegajoEmpleado(idvendedor,emple);
     while (posidemple==-1)
         {
@@ -274,9 +282,27 @@ void manager_vendedor::BuscarVendedor(){
     while (band && resp != "no")
     {
         cout<<"Ingrese ID producto"<<endl;
-        cin>>idproducto;
+        cin>>idproductos;
+
+         while (esNumero(idproductos))
+    {
+        cout<<"HA INGRESADO UN PARAMETRO INVALDO"<<endl;
+        cout<<"INGRESE UN VALOR NUMERICO MAYOR A 0"<<endl;
+        cin>>idproductos;
+    }
+    idproducto = stoi(idproductos);
+
         cout<<"Ingrese cantidad"<<endl;
-        cin>>cantidad;
+        cin>>cantidads;
+
+           while (esNumero(cantidads))
+    {
+        cout<<"HA INGRESADO UN PARAMETRO INVALDO"<<endl;
+        cout<<"INGRESE UN VALOR NUMERICO MAYOR A 0"<<endl;
+        cin>>cantidads;
+    }
+    cantidad = stoi(cantidads);
+
         pos=archpro.BuscarIdProducto(idproducto);
         while (pos==-1)
         {
@@ -289,8 +315,16 @@ void manager_vendedor::BuscarVendedor(){
 
 
 
-cout<<"Ingrese el numero del  cliente: "<<endl;
-cin>>ncliente;
+cout<<"Ingrese el ID del  cliente: "<<endl;
+cin>>nclientes;
+   while (esNumero(nclientes))
+    {
+        cout<<"HA INGRESADO UN PARAMETRO INVALDO"<<endl;
+        cout<<"INGRESE UN VALOR NUMERICO MAYOR A 0"<<endl;
+        cin>>nclientes;
+    }
+    ncliente = stoi(nclientes);
+
 clte=archivoCLiente.BuscarIdCliente(ncliente);
 cout<<clte<<endl;
 

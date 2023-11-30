@@ -10,6 +10,8 @@ class Vendedor_menu{
 
 public:
     void MenuVendedor();
+    bool esNumero(string numero);
+
 
 };
 
