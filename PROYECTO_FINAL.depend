@@ -372,14 +372,14 @@
 
 1699826513 c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\archivo_cliente.h
 
-1701352610 c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\archivo_cliente.h
+1701362014 c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\archivo_cliente.h
 	<iostream>
 	<string>
 	"Cliente.h"
 
 1699826493 source:c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\archivo_cliente.cpp
 
-1701358639 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\archivo_cliente.cpp
+1701362014 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\archivo_cliente.cpp
 	"archivo_cliente.h"
 	<iostream>
 	<string>
@@ -463,7 +463,7 @@
 
 1700053949 h"
 
-1701360698 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\vendedor.cpp
+1701362014 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\vendedor.cpp
 	"Vendedor.h"
 	"manager_vendedor.h"
 	"Venta.h"
@@ -491,7 +491,7 @@
 	"Venta.h"
 	"archivo_vendedor.h"
 
-1701361350 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\manager_vendedor.cpp
+1701362014 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\manager_vendedor.cpp
 	<iostream>
 	<limits>
 	"Persona.h"
