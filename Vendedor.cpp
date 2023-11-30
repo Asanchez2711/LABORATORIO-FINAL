@@ -25,6 +25,7 @@ void Vendedor_menu::MenuVendedor() {
         cout << "5-CARGAR COMPRA" << endl;
         cout << "6-VER IMPORTE COMISIONADO HASTA EL MOMENTO" << endl;
           cout << "7-LISTAR VENTAS" << endl;
+        cout<<"8-EMPLEADO CON MAYOR RECAUDACION "<<endl;
         cout << "***************************" << endl;
         cout << "0-SALIR" << endl;
 
@@ -33,11 +34,11 @@ void Vendedor_menu::MenuVendedor() {
         cin >> opcion;
         system("cls");
 
-        if (cin.fail() || opcion < 0 || opcion > 7) {
+        if (cin.fail() || opcion < 0 || opcion > 8) {
             cin.clear();  // Clear the error flag
             cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Discard invalid input
 
-            cout << "Error: Opcion invalida. Ingrese un numero del 0 al 6." << endl;
+            cout << "Error: Opcion invalida. Ingrese un numero del 0 al 8." << endl;
             cout<<endl;
               system("pause");
         system("cls");
@@ -221,6 +222,41 @@ case 7:
 
 
 
+case 8:{
+
+cout<<endl;
+
+archivo_empleado archivito("empleado.dat");
+
+int contar=archivito.archivoEmpleadoContar();
+Empleado obj;
+int c;
+
+cout<<endl;
+int maximo;
+string name;
+
+for(c=0;c<contar;c++){
+
+
+    obj=archivito.Leer(c);
+if(obj.getTotalVendido()>maximo){
+maximo=obj.getTotalVendido();
+name=obj.getNombre();
+
+       }
+}
+
+cout<<"El vendedor que mas vendio historicamente fue : "<<name<<" un importe de : "<<maximo<<endl;
+cout<<endl;
+
+
+        system("pause");
+        system("cls");
+
+
+break;
+}
 
 
 
