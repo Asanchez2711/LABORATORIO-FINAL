@@ -173,10 +173,22 @@ archivo_empleado archEmpleado("empleado.dat");
 
 Empleado objEmpleado;
 
-int idEmpl,conta,pos;
-float papa;
+int idEmpl,contar,pos,i;
 
-cout<<"La comision de que empleado quiere ver ? "<<endl;
+contar = archEmpleado.archivoEmpleadoContar();
+
+
+for(i=0;i<contar;i++){
+    objEmpleado=archEmpleado.Leer(i);
+    if(objEmpleado.getEstado()==true){
+        objEmpleado.mostrar();
+        cout<<endl<<"Y su comision es de: "<<objEmpleado.getTotalVendido()*0.10<<endl<<endl<<endl;
+    }
+}
+
+/*
+
+cout<<"La comision de que empleado quiere ver ? Ingrese ID Vendedor"<<endl;
 cin>>idEmpl;
 
 pos=archEmpleado.BuscarLegajoEmpleado(idEmpl,objEmpleado);
@@ -193,10 +205,11 @@ if(pos>=0){
         cout<<"ESTE ES EL IMPORTE COMISIONADO HASTA EL MOMENTO POR CADA VENDEDOR: "<<papa<<endl;
         cout<<endl;
 
-
+*/
 
     break;
    }
+
 
 case 7:
 {
