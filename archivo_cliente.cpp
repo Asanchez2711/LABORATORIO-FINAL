@@ -105,7 +105,7 @@ Cliente reg;
         return -2;
     }
     while(fread(&reg,sizeof reg,1,p)==1){
-        if(id==reg.getLegajo()){
+        if(id==reg.getLegajo() && reg.getEstado()==true){
             fclose(p);
             return pos;
         }
@@ -126,7 +126,7 @@ Cliente reg;
         return -2;
     }
     while(fread(&reg,sizeof (Cliente),1,p)==1){
-        if(legajo==reg.getLegajo()){
+        if(legajo==reg.getLegajo() && reg.getEstado()==true){
             fclose(p);
             return pos;
         }

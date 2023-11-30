@@ -428,11 +428,11 @@ void manager_vendedor::buscarCliente() {
     Cliente reg,fe;
 
     aux = arch.BuscarIdCliente(cliente);
-    fe=arch.leerCliente(cliente, reg);
+    fe=arch.leerCliente(aux, reg);
 
-    if (aux >= 0&&(fe.getEstado()==true)) {
+    if (aux >= 0 && fe.getEstado()==true) {
 
-        reg.Mostrar();
+        reg.mostrar();
     }
     else{cout<<endl;
     cout<<"NO EXISTE EL CLIENTE !! "<<endl;
@@ -455,6 +455,8 @@ void manager_vendedor::buscarCliente() {
      return false;
 
  }
+
+
 
 
 
