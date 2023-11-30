@@ -152,11 +152,11 @@
 
 1699823551 c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\administrador.h
 
-1701352610 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\administrador.cpp
+1701375442 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\administrador.cpp
 	<iostream>
 	"administrador.h"
 
-1701352610 c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\administrador.h
+1701375442 c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\administrador.h
 	<iostream>
 	<cstdio>
 	<cstring>
@@ -245,7 +245,7 @@
 
 1699883312 c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\manager.h
 
-1701352989 c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\manager.h
+1701375442 c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\manager.h
 	<iostream>
 	<cstdio>
 	<limits>
@@ -255,7 +255,7 @@
 
 1699722708 c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\archivo_producto.h
 
-1701352610 c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\archivo_producto.h
+1701375442 c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\archivo_producto.h
 	<iostream>
 	<cstdio>
 	<cstring>
@@ -263,7 +263,7 @@
 
 1700054365 c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\producto.h
 
-1701354010 c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\producto.h
+1701375442 c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\producto.h
 	<iostream>
 	<cstdio>
 	<cstring>
@@ -285,11 +285,11 @@
 	"archivo_venta.h"
 	"archivo_producto.h"
 
-1701352610 c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\fecha.h
+1701375442 c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\fecha.h
 	<iostream>
 	<string.h>
 
-1701358438 c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\manager_vendedor.h
+1701375442 c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\manager_vendedor.h
 	<iostream>
 	<cstdio>
 	"archivo_vendedor.h"
@@ -307,7 +307,7 @@
 	"archivo_venta.h"
 	"archivo_producto.h"
 
-1701352610 c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\archivo_vendedor.h
+1701375442 c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\archivo_vendedor.h
 	<iostream>
 	<string>
 	<cstdio>
@@ -316,7 +316,7 @@
 
 1699822494 c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\persona.h
 
-1701358438 c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\persona.h
+1701375442 c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\persona.h
 	<iostream>
 	<string>
 	<limits>
@@ -324,7 +324,7 @@
 
 1699889691 c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\empleado.h
 
-1701352610 c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\empleado.h
+1701375442 c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\empleado.h
 	<iostream>
 	<string>
 	<cstdio>
@@ -333,14 +333,14 @@
 
 1699826204 source:c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\aplicacion.cpp
 
-1701352610 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\aplicacion.cpp
+1701375442 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\aplicacion.cpp
 	<iostream>
 	<limits>
 	"aplicacion.h"
 
 1699826204 c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\aplicacion.h
 
-1701352610 c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\aplicacion.h
+1701375442 c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\aplicacion.h
 	<iostream>
 	<cstdio>
 	"administrador.h"
@@ -354,7 +354,7 @@
 	"archivo_cliente.h"
 	"manager_vendedor.h"
 
-1701360343 c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\vendedor.h
+1701375442 c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\vendedor.h
 	<iostream>
 	<cstdio>
 	"Cliente.h"
@@ -364,7 +364,7 @@
 1699826493 c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\cliente.h
 	"manager_vendedor.h"
 
-1701352610 c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\cliente.h
+1701375442 c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\cliente.h
 	<iostream>
 	<string>
 	"Fecha.h"
@@ -372,21 +372,21 @@
 
 1699826513 c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\archivo_cliente.h
 
-1701362014 c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\archivo_cliente.h
+1701375442 c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\archivo_cliente.h
 	<iostream>
 	<string>
 	"Cliente.h"
 
 1699826493 source:c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\archivo_cliente.cpp
 
-1701362014 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\archivo_cliente.cpp
+1701375442 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\archivo_cliente.cpp
 	"archivo_cliente.h"
 	<iostream>
 	<string>
 
 1700059822 source:c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\archivo_producto.cpp
 
-1701352610 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\archivo_producto.cpp
+1701375442 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\archivo_producto.cpp
 	<iostream>
 	<string>
 	<vector>
@@ -398,11 +398,11 @@
 
 1699826493 source:c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\cliente.cpp
 
-1701352610 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\archivo_vendedor.cpp
+1701375442 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\archivo_vendedor.cpp
 	"archivo_vendedor.h"
 	"empleado.h"
 
-1701352610 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\cliente.cpp
+1701375442 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\cliente.cpp
 	"Cliente.h"
 	<iostream>
 	<string>
@@ -418,15 +418,15 @@
 
 1699721510 source:c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\main.cpp
 
-1701352610 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\empleado.cpp
+1701375442 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\empleado.cpp
 	"Empleado.h"
 	"Fecha.h"
 
-1701352610 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\fecha.cpp
+1701375442 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\fecha.cpp
 	<limits>
 	"Fecha.h"
 
-1701352610 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\main.cpp
+1701375442 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\main.cpp
 	<iostream>
 	<cstdio>
 	"aplicacion.h"
@@ -436,7 +436,7 @@
 	"Fecha.h"
 	"manager.h"
 
-1701352996 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\manager.cpp
+1701375442 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\manager.cpp
 	<iostream>
 	"Fecha.h"
 	"manager.h"
@@ -449,11 +449,11 @@
 
 1700054834 source:c:\users\alejandro\desktop\subir_git\modificar\laboratorio-final\producto.cpp
 
-1701358438 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\persona.cpp
+1701375442 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\persona.cpp
 	"Persona.h"
 	<cctype>
 
-1701355642 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\producto.cpp
+1701375442 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\producto.cpp
 	"Producto.h"
 	<string>
 	<limits>
@@ -463,7 +463,7 @@
 
 1700053949 h"
 
-1701362014 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\vendedor.cpp
+1701375442 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\vendedor.cpp
 	"Vendedor.h"
 	"manager_vendedor.h"
 	"Venta.h"
@@ -472,26 +472,26 @@
 	<limits>
 	<iomanip>
 
-1701352610 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\archivo_venta.cpp
+1701375442 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\archivo_venta.cpp
 	"archivo_venta.h"
 	"archivo_vendedor.h"
 	<iostream>
 	<string>
 
-1701352610 c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\archivo_venta.h
+1701375442 c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\archivo_venta.h
 	"Venta.h"
 
-1701352610 c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\venta.h
+1701375442 c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\venta.h
 	<iostream>
 	"Producto.h"
 	"Empleado.h"
 	"Fecha.h"
 
-1701352610 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\venta.cpp
+1701376526 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\venta.cpp
 	"Venta.h"
 	"archivo_vendedor.h"
 
-1701362014 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\manager_vendedor.cpp
+1701376363 source:c:\users\pc\desktop\programacion 2023\laboratorio 2\proyecto\proyecto-clon\laboratorio-final\manager_vendedor.cpp
 	<iostream>
 	<limits>
 	"Persona.h"

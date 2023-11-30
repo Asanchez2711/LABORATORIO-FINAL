@@ -284,47 +284,7 @@ void manager_vendedor::BuscarVendedor(){
     }
 
     }
-
-
-
-
-    while (band && resp != "no")
-    {
-        cout<<"Ingrese ID producto"<<endl;
-        cin>>idproductos;
-
-         while (esNumero(idproductos))
-    {
-        cout<<"HA INGRESADO UN PARAMETRO INVALDO"<<endl;
-        cout<<"INGRESE UN VALOR NUMERICO MAYOR A 0"<<endl;
-        cin>>idproductos;
-    }
-    idproducto = stoi(idproductos);
-
-        cout<<"Ingrese cantidad"<<endl;
-        cin>>cantidads;
-
-           while (esNumero(cantidads))
-    {
-        cout<<"HA INGRESADO UN PARAMETRO INVALDO"<<endl;
-        cout<<"INGRESE UN VALOR NUMERICO MAYOR A 0"<<endl;
-        cin>>cantidads;
-    }
-    cantidad = stoi(cantidads);
-
-        pos=archpro.BuscarIdProducto(idproducto);
-        while (pos==-1)
-        {
-            cout<<"El producto ingresado no existe vuelva a ingresar ID de producto"<<endl;
-            cin>>idproducto;
-            pos=archpro.BuscarIdProducto(idproducto);
-
-        }
-
-
-
-
-cout<<"Ingrese el ID del  cliente: "<<endl;
+    cout<<"Ingrese el ID del  cliente: "<<endl;
 cin>>nclientes;
    while (esNumero(nclientes))
     {
@@ -385,6 +345,47 @@ while (clte == -1) {
     }
 }
 
+
+
+
+    while (band && resp != "no")
+    {
+        cout<<"Ingrese ID producto"<<endl;
+        cin>>idproductos;
+
+         while (esNumero(idproductos))
+    {
+        cout<<"HA INGRESADO UN PARAMETRO INVALDO"<<endl;
+        cout<<"INGRESE UN VALOR NUMERICO MAYOR A 0"<<endl;
+        cin>>idproductos;
+    }
+    idproducto = stoi(idproductos);
+
+        cout<<"Ingrese cantidad"<<endl;
+        cin>>cantidads;
+
+           while (esNumero(cantidads))
+    {
+        cout<<"HA INGRESADO UN PARAMETRO INVALDO"<<endl;
+        cout<<"INGRESE UN VALOR NUMERICO MAYOR A 0"<<endl;
+        cin>>cantidads;
+    }
+    cantidad = stoi(cantidads);
+
+        pos=archpro.BuscarIdProducto(idproducto);
+        while (pos==-1)
+        {
+            cout<<"El producto ingresado no existe vuelva a ingresar ID de producto"<<endl;
+            cin>>idproducto;
+            pos=archpro.BuscarIdProducto(idproducto);
+
+        }
+
+
+
+
+
+
         cantidadproductos[numerodeproductos]=idproducto;
         numerodeproductos++;
 
@@ -426,13 +427,20 @@ while (clte == -1) {
     venta.setidCliente(ncliente);
     emple.setTotalVendido(totalEmpleado);
     objCliente.setTotalGastado(totalCliente);
+    if (archventa.archivoVentaContar()<=0)
+    {
+        int k=1;
+        venta.setidVenta(k);
+
+    }else
+    {
     venta.setidVenta((archventa.archivoVentaContar()+1));
+    }
     archventa.GuardarVenta(venta);
     archemple.ModificarEmpleado(emple,posidemple); ///Verificar donde se rompe y se corrempe empleado al modificar pos en archivo_empleado
-    objCliente.Mostrar();
     archivoCLiente.ModificarCliente(objCliente,clte);
 
-
+   system("cls");
 
 
  }
