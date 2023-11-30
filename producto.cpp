@@ -124,29 +124,21 @@ void Producto::set_id(int id) {
 
     void Producto::cargar(int f)
     {
+        string precio,cantidad,temporada;
         _id=f;
 
-       while (cin.fail())
-        {
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(),'\n');
-            cout<<"Valor invalido, ingrese solo numeros"<<endl;
-            cout<<"Ingrese nuevamente el valor"<<endl;
-            cin>>_id;
 
-        }
 
         cout<<"Ingrese Precio: "<<endl;
-        cin>>_precio;
-        while (cin.fail())
+        cin>>precio;
+        while (esNumero(precio))
         {
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(),'\n');
+
             cout<<"Valor invalido, ingrese solo numeros"<<endl;
             cout<<"Ingrese nuevamente el valor"<<endl;
-            cin>>_precio;
-
+            cin>>precio;
         }
+        _precio = stof(precio);
         cout<<"Ingrese Proveedor: "<<endl;
         cin.ignore();
         cin.getline(_proveedor, 30);
@@ -164,16 +156,17 @@ void Producto::set_id(int id) {
         cin.ignore();
         cin.getline(_descripcion, 30);
         cout<<"Ingrese Cantidad: "<<endl;
-        cin>>_cantidad;
-        while (cin.fail())
+        cin>>cantidad;
+        while (esNumero(cantidad))
         {
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(),'\n');
+
             cout<<"Valor invalido, ingrese solo numeros"<<endl;
             cout<<"Ingrese nuevamente el valor"<<endl;
-            cin>>_cantidad;
+            cin>>cantidad;
 
         }
+        _cantidad=stof(cantidad);
+
         cout<<"Ingrese color: "<<endl;
         cin.ignore();
         cin.getline(_color, 30);
@@ -184,16 +177,16 @@ void Producto::set_id(int id) {
         cin.getline(_marca, 30);
 
         cout<<"Ingrese temporada: "<<endl;
-        cin>>_temporada;
-       while (cin.fail())
+        cin>>temporada;
+       while (esNumero(temporada))
         {
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(),'\n');
+
             cout<<"Valor invalido, ingrese solo numeros"<<endl;
             cout<<"Ingrese nuevamente el valor"<<endl;
-            cin>>_temporada;
+            cin>>temporada;
 
         }
+        _temporada=stoi(temporada);
         //_estado=false;
 
         //cout<<"Ingrese Estado (0)Inactivo, (1)Activo: "<<endl;
@@ -228,5 +221,17 @@ void Producto::set_id(int id) {
         cout<<"Producto ya no se encuentra"<<endl;
         }
 }
+ bool Producto::esNumero(string numero) const
+ {
+     for (char cad : numero )
+     {
+         if(!isdigit(cad))
+         {
+             return true;
+         }
+     }
 
+     return false;
+
+ }
 

@@ -18,6 +18,7 @@ public:
     /// VA EN MANAGER VENDEDOR: void ListarRecaudado();
     void EliminarArticulo();
     void ModificarProducto();
+    bool esNumero(string numero);
 
 private:
     archivo_producto arch = archivo_producto("producto.dat");

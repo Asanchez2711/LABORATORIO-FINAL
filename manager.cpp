@@ -8,10 +8,21 @@ void ManagerProducto::Cargar(){
 
     Producto reg;
     int pos=0, id;
+    string ids;
 
 
     cout<<"INGRESE CODIGO DE PRODUCTO: ";
-    cin>>id;
+    cin>>ids;
+
+    while (esNumero(ids))
+    {
+         cout<<"EL VALOR INGRESADO ES INVALIDO"<<endl;
+         cout<<"INGRESE UN NUMERO"<<endl;
+         cin>>ids;
+    }
+
+    id=stoi(ids);
+
     while(id<0){
       cout<<" !! INGRESE CODIGO MAYOR IGUAL A 0 !!"<<endl;
       cout<<"INGRESE CODIGO DE PRODUCTO: ";
@@ -164,3 +175,16 @@ void ManagerProducto::ModificarProducto(){
         cout<<"¡¡ PRODUCTO NO ENCONTRADO EN LOS ARCHIVOS, INTENTELO NUEVAMENTE !!"<<endl;
     }
 }
+ bool ManagerProducto::esNumero(string numero)
+ {
+     for (char cad : numero )
+     {
+         if(!isdigit(cad))
+         {
+             return true;
+         }
+     }
+
+     return false;
+
+ }

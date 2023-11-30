@@ -7,26 +7,20 @@
 void manager_vendedor::CargarVendedor(){
 
 int v,r;
+string vs;
 archivo_empleado arch("empleado.dat");
     cout<<" ESTA POR INGRESAR UN VENDEDOR "<<endl;
     cout<<endl;
     cout<<"Ingrese el id del vendedor"<<endl;
-    cin>>v;
-    while(cin.fail() || v<0){
-            if (std::cin.fail()) {
-            std::cin.clear();  // Limpiar el estado de error
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // Descartar la entrada no válida
-            std::cout << "Entrada no valida. Por favor, ingrese un numero entero.\n";
-            cin>>v;
-            }
-            else {
-                cout<<"!! EL CODIGO TIENE QUE SER MAYOR IGUAL A 0 !! "<<endl;
-                cout<<"Ingrese el id del vendedor"<<endl;
-                cin>>v;
-            }
+    cin>>vs;
+    while(esNumero(vs)){
 
+          cout<<" HA INGRESADO UN VALOR INCORRECTO "<<endl;
+          cout<<" INGRESE UN NUMERO MAYOR A 0 "<<endl;
+          cin>>vs;
 
         }
+        v=stoi(vs);
     /*while(v<0){
         cout<<"!! EL CODIGO TIENE QUE SER MAYOR IGUAL A 0 !! "<<endl;
                 cout<<"Ingrese el id del vendedor"<<endl;
@@ -448,6 +442,19 @@ void manager_vendedor::buscarCliente() {
     }
 }
 
+ bool manager_vendedor::esNumero(string numero)
+ {
+     for (char cad : numero )
+     {
+         if(!isdigit(cad))
+         {
+             return true;
+         }
+     }
+
+     return false;
+
+ }
 
 
 

@@ -66,27 +66,6 @@ bool Persona::getEstado() const
 
 void Persona::cargar(int f) {
     _estado = true;
-    char opcionTerminar;
-
-    while (f <= 0 || cin.fail()) {
-        if (cin.fail()) {
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout << "Valor invalido, ingrese solo numeros" << endl;
-        } else {
-            cout << "Valor invalido, ingrese un numero mayor a cero" << endl;
-        }
-
-        cout << "Ingrese nuevamente el valor (o 'T' para terminar): ";
-        cin >> opcionTerminar;
-
-        if (toupper(opcionTerminar) == 'T') {
-            cout << "Carga de datos terminada por el usuario." << endl;
-            return;
-        }
-
-        cin >> f;
-    }
 
     _legajo = f;
 
@@ -136,3 +115,18 @@ void Persona::mostrar()
     cout<<"Fecha de alta"<<_fechaDeAlta.toString()<<endl;
 
 }
+
+bool Persona::esNumero(string numero)
+ {
+     for (char cad : numero )
+     {
+         if(!isdigit(cad))
+         {
+             return true;
+         }
+     }
+
+     return false;
+
+ }
+

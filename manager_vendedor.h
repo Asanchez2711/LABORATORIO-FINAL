@@ -25,6 +25,7 @@ public:
     void MostrarVendedor(Empleado reg);
     void CargarVenta();
     void buscarCliente();
+    bool esNumero(string numero);
 
 private:
 

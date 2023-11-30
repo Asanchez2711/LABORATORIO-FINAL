@@ -50,6 +50,7 @@ public:
     string getMarca() const;
     int getTemporada() const;
     bool getEstado() const;
+    bool esNumero(string numero) const;
 
     void cargar(int f);
     void mostrar() const;

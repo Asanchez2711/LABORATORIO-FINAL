@@ -31,6 +31,7 @@ public:
         class Fecha getFechaDeAlta() const;
         bool getEstado() const;
         bool esSoloLetras(const char *cadena);
+        bool esNumero(string numero);
 
         void cargar(int f);
          void mostrar();
