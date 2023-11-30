@@ -86,10 +86,12 @@ void manager_vendedor::TotalRecaudadoXVendedor(){
         }
 }
 
+
 void manager_vendedor::ModificarVendedor(){
 
         int pos;
         int i,legajo,cantidad;
+        Empleado empleado;
         cantidad=arch.archivoEmpleadoContar();
 
 
@@ -105,10 +107,12 @@ void manager_vendedor::ModificarVendedor(){
 
         }
         pos = arch.BuscarEmpleadoenArchivo(legajo);
-        if(pos>=0){
+        empleado= arch.leerEmpleado(pos,empleado);
+
+        if(pos>=0 && empleado.getEstado()==true){
         for(i=0;i<cantidad;i++){
                 Empleado reg = arch.Leer(i);
-                if(reg.getLegajo() == legajo){
+                if(reg.getLegajo() == legajo && reg.getEstado()==true){
                     reg.cargar(legajo);
                     arch.ModificarEmpleado(reg,i);
                     break;
@@ -175,6 +179,7 @@ void manager_vendedor::MostrarVendedor(Empleado reg){
 void manager_vendedor::BuscarVendedor(){
     int pos;
     int legajo;
+    Empleado empleado;
 
 
     cout<<"INGRESE LEGAJO A BUSCAR :";
@@ -182,7 +187,8 @@ void manager_vendedor::BuscarVendedor(){
 
 
     pos = arch.BuscarEmpleadoenArchivo(legajo);
-    if(pos>=0){
+    empleado = arch.leerEmpleado(pos,empleado);
+    if(pos>=0 && empleado.getEstado()==true){
         Empleado reg = arch.Leer(pos);
         reg.mostrar();
     }
@@ -190,7 +196,6 @@ void manager_vendedor::BuscarVendedor(){
     cout<<"¡¡ LEGAJO NO SE ENCUENTRA EN LOS ARCHIVOS !! "<<endl;
     }
 }
-
  void manager_vendedor::CargarVenta()
  {
 
