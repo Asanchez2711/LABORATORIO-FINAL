@@ -11,6 +11,7 @@ class archivo_cliente
 
         int archivoClienteContar();
         Cliente leerCliente(int pos, Cliente reg);
+        Cliente Leer(int pos);
         bool BorrarCliente(Cliente reg, int pos);
         bool ModificarCliente(Cliente reg,int pos);
         bool GuardarCliente(Cliente reg);

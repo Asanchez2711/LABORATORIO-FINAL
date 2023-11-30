@@ -135,3 +135,16 @@ Cliente reg;
     fclose(p);
     return -1;
 }
+
+Cliente archivo_cliente::Leer(int pos)
+{
+    Cliente reg;
+    FILE *p=fopen(_nombre.c_str(), "rb");
+    if(p==nullptr){
+        return reg;
+    }
+    fseek(p, pos * sizeof(Cliente), SEEK_SET);
+    fread(&reg, sizeof(Cliente), 1, p);
+    fclose(p);
+    return reg;
+}
